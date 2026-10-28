@@ -5,101 +5,128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Parallax – College & Career Guidance</title>
 <meta name="description" content="Free mentorship, pathway exploration, and resources for students and parents, grades 9–12.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
 <style>
 :root{
-  --bg:#faf7f2; --card:#ffffff; --ink:#1d2433; --muted:#5a6478; --line:#e3ddd2;
-  --brand:#2b4fd8; --brand-d:#1e3aa8; --accent:#f2a33a; --ok:#1f7a4d; --soft:#eaf0ff;
-  --fs:18px;
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#12161f;--card:#1b2130;--ink:#eef1f7;--muted:#a9b2c6;--line:#2c3448;--brand:#7b9bff;--brand-d:#a9bdff;--soft:#222b45;}
+  --navy:#26354f; --blue:#4f74b0; --blue-d:#3b5c94; --sky:#eaf1fb; --gold:#f2b441; --gold-d:#d99a1e; --butter:#fff6dc;
+  --ink:#26354f; --muted:#5d6b84; --line:#dbe4f2; --card:#fff; --ok:#1f7a4d;
 }
 *{box-sizing:border-box}
-html{font-size:var(--fs);scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.6}
-a{color:var(--brand)}
-h1,h2,h3{line-height:1.2;margin:0 0 .5em}
-h1{font-size:2.3rem} h2{font-size:1.7rem} h3{font-size:1.15rem}
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
-.skip{position:absolute;left:-999px;top:0;background:var(--brand);color:#fff;padding:10px 14px;z-index:99}
+html{font-size:18px;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:"Nunito",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0 0 .5em;color:var(--navy)}
+h1{font-size:2.9rem} h2{font-size:2.1rem} h3{font-size:1.3rem}
+a{color:var(--blue-d)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 14px;z-index:99}
 .skip:focus{left:8px;top:8px}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+:focus-visible{outline:3px solid var(--gold-d);outline-offset:3px}
 
-header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);z-index:10}
-.bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0}
-.logo{font-weight:800;font-size:1.4rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo i{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--brand),var(--accent));display:inline-block}
-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
-nav a{padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem}
-nav a:hover{background:var(--soft)}
-.tools{display:flex;gap:8px}
-.btn{min-height:48px;padding:10px 20px;border-radius:12px;border:2px solid var(--brand);background:var(--brand);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn:hover{background:var(--brand-d);border-color:var(--brand-d)}
-.btn.ghost{background:transparent;color:var(--brand)}
-.btn.ghost:hover{background:var(--soft)}
-.btn.sm{min-height:44px;padding:6px 14px;font-size:.9rem}
-.lang{border-color:var(--ink);color:var(--ink);background:transparent}
-.lang:hover{background:var(--soft);border-color:var(--ink)}
+/* language banner */
+.langbar{background:var(--gold);color:var(--navy);font-weight:700;text-align:center;padding:8px 12px;font-size:.95rem}
+.langbar button{margin-left:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 16px;font:inherit;font-weight:800;cursor:pointer;min-height:40px}
+.langbar button:hover{background:#17223a}
 
-section{padding:56px 0;border-bottom:1px solid var(--line)}
-.lead{color:var(--muted);max-width:60ch;font-size:1.05rem}
-.hero{padding:64px 0 48px}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:24px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
-.card.big{text-decoration:none;color:inherit;display:block;transition:transform .15s,border-color .15s}
-.card.big:hover{transform:translateY(-3px);border-color:var(--brand)}
-.card .ico{font-size:2rem;display:block;margin-bottom:8px}
-.tag{display:inline-block;background:var(--soft);color:var(--brand);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:700;margin-bottom:8px}
+header{position:sticky;top:0;background:#fff;border-bottom:3px solid var(--sky);z-index:10}
+.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:8px 0}
+.logo img{height:68px;width:auto;display:block}
+nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav a{padding:10px 13px;border-radius:999px;text-decoration:none;color:var(--navy);font-weight:800;font-size:.95rem}
+nav a:hover{background:var(--butter)}
+.langsw{display:flex;border:3px solid var(--navy);border-radius:999px;overflow:hidden;background:#fff}
+.langsw button{border:0;background:transparent;color:var(--navy);font:inherit;font-weight:800;padding:8px 16px;min-height:46px;cursor:pointer}
+.langsw button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.langsw button:not([aria-pressed="true"]):hover{background:var(--butter)}
+
+.btn{min-height:52px;padding:10px 26px;border-radius:999px;border:3px solid var(--blue);background:var(--blue);color:#fff;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s}
+.btn:hover{background:var(--blue-d);border-color:var(--blue-d);transform:translateY(-2px);box-shadow:0 6px 14px rgba(38,53,79,.2)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.btn.gold:hover{background:var(--gold-d);border-color:var(--gold-d)}
+.btn.ghost{background:#fff;color:var(--blue-d)}
+.btn.ghost:hover{background:var(--sky)}
+.btn.sm{min-height:46px;padding:6px 18px;font-size:.92rem}
+
+/* sections */
+section{padding:56px 0 64px}
+.bg-sky{background:var(--sky)} .bg-white{background:#fff} .bg-butter{background:var(--butter)}
+.eyebrow{display:inline-block;background:var(--gold);color:var(--navy);border-radius:999px;padding:3px 14px;font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.sec-h h2::after{content:"";display:block;width:64px;height:6px;border-radius:9px;background:var(--gold);margin-top:10px}
+.lead{color:var(--muted);max-width:62ch;font-size:1.08rem}
+.wave{line-height:0}
+.wave svg{display:block;width:100%;height:56px}
+
+.hero{padding:44px 0 56px;background:linear-gradient(180deg,#fff 0,var(--sky) 100%)}
+.hero-grid{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.hero svg.art{width:100%;height:auto;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.hero svg.art{animation:none}*{transition:none!important}}
+
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));margin-top:26px}
+.card{background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 4px 0 var(--line)}
+.card.big{text-decoration:none;color:inherit;display:block;transition:transform .15s,box-shadow .15s,border-color .15s}
+.card.big:hover{transform:translateY(-4px) rotate(-.6deg);border-color:var(--gold);box-shadow:0 8px 0 var(--gold)}
+.badge{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:10px}
+.b1{background:#dfe9fa}.b2{background:#ffe9b3}.b3{background:#dff1e6}.b4{background:#fde0dc}
+.tag{display:inline-block;background:var(--sky);color:var(--blue-d);border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:800;margin-bottom:8px}
 .muted{color:var(--muted)}
-.note{background:var(--soft);border-left:5px solid var(--brand);padding:12px 16px;border-radius:8px;margin-top:20px}
+.note{background:#fff;border:2px dashed var(--gold-d);padding:12px 16px;border-radius:16px;margin-top:22px}
 
-/* tabs */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 12px}
-.tab{min-height:48px;padding:8px 18px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
-.tab[aria-selected="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 12px}
+.tab{min-height:50px;padding:8px 22px;border-radius:999px;border:3px solid var(--line);background:#fff;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}
+.tab:hover{border-color:var(--blue)}
+.tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
 
-/* forms */
-form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-label{font-weight:700;display:block;margin-bottom:4px}
-input,select,textarea{width:100%;min-height:48px;padding:10px 12px;font:inherit;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 4px 0 var(--line)}
+label{font-weight:800;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;min-height:50px;padding:10px 14px;font:inherit;border:3px solid var(--line);border-radius:14px;background:#fff;color:var(--navy)}
+input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 textarea{min-height:90px}
 .full{grid-column:1/-1}
-.ok{background:#e6f5ec;color:#14532d;border:2px solid var(--ok);padding:14px;border-radius:12px;margin-top:14px}
-@media (prefers-color-scheme: dark){.ok{background:#16301f;color:#c8f0d6}}
+.ok{background:#e6f5ec;color:#14532d;border:3px solid var(--ok);padding:14px;border-radius:16px;margin-top:14px}
 
-/* chips */
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.chip{min-height:48px;padding:8px 16px;border-radius:999px;border:2px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#1d2433}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.chip{min-height:50px;padding:8px 20px;border-radius:999px;border:3px solid var(--blue);background:#fff;color:var(--navy);font:inherit;font-weight:800;cursor:pointer;transition:transform .12s}
+.chip:hover{transform:scale(1.05)}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold-d)}
 
-/* checklist */
 .check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.check li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
-.check input{width:26px;height:26px;min-height:0;margin-top:3px;flex:none}
-.check label{font-weight:500;margin:0}
+.check li{background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 16px;display:flex;gap:14px;align-items:flex-start}
+.check input{width:28px;height:28px;min-height:0;margin-top:2px;flex:none;accent-color:var(--blue)}
+.check label{font-weight:600;margin:0}
 .check input:checked + label{text-decoration:line-through;color:var(--muted)}
-.progress{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 16px}
-.progress div{height:100%;background:var(--ok);width:0;transition:width .3s}
+.progress{height:16px;background:#fff;border:2px solid var(--line);border-radius:99px;overflow:hidden;margin:6px 0 16px}
+.progress div{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-d));width:0;transition:width .3s}
 
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 16px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;padding:12px 0;min-height:48px}
-details[open] summary{color:var(--brand)}
+details{background:#fff;border:2px solid var(--line);border-radius:18px;padding:4px 18px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:800;padding:12px 0;min-height:50px;font-size:1.05rem}
+details[open]{border-color:var(--blue)}
+details[open] summary{color:var(--blue-d)}
 details ul{margin:0 0 12px;padding-left:20px}
-dl{margin:0}dt{font-weight:800;margin-top:12px}dd{margin:0 0 6px;color:var(--muted)}
+dl{margin:0}dt{font-weight:800;margin-top:12px;color:var(--blue-d)}dd{margin:0 0 6px;color:var(--muted)}
+.mentor-top{display:flex;gap:14px;align-items:center;margin-bottom:8px}
+.mentor-top svg{width:72px;height:72px;flex:none;border-radius:50%}
+.mentor-top h3{margin:0}
+.two{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.sec-art{float:right;width:min(260px,38%);margin:0 0 10px 18px}
 
-footer{padding:32px 0;color:var(--muted);font-size:.9rem}
-.two{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-@media print{header,.tools,.cta,form,footer{display:none}}
-@media (max-width:640px){h1{font-size:1.9rem}nav{display:none}}
+footer{background:var(--navy);color:#d6deee;padding:34px 0;text-align:center}
+footer .lg{display:inline-block;background:#fff;border-radius:20px;padding:6px 18px;margin-bottom:12px}
+footer img{height:64px;display:block}
+@media (max-width:760px){h1{font-size:2.2rem}h2{font-size:1.75rem}.hero-grid{grid-template-columns:1fr}nav{display:none}.sec-art{display:none}.logo img{height:56px}}
+@media print{header,.langbar,.cta,form,footer,.wave{display:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
+<div class="langbar"><span data-i18n="banner_txt">¿Prefiere leer en español? Este sitio está disponible en español.</span><button id="bannerBtn" type="button" data-i18n="banner_btn">Ver en español</button></div>
 <header>
   <div class="wrap bar">
-    <a class="logo" href="#top"><i aria-hidden="true"></i>Parallax</a>
+    <a class="logo" href="#top" aria-label="Parallax"><img src="logo.png" alt="Parallax logo"></a>
     <nav aria-label="Main">
       <a href="#mentors" data-i18n="nav_mentors">Mentors</a>
       <a href="#pathways" data-i18n="nav_paths">Pathways</a>
@@ -107,9 +134,9 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
       <a href="#money" data-i18n="nav_money">Paying for college</a>
       <a href="#parents" data-i18n="nav_parents">Parents</a>
     </nav>
-    <div class="tools">
-      <button class="btn sm lang" id="textSize" aria-label="Change text size" data-i18n-aria="textsize">A+</button>
-      <button class="btn sm lang" id="langBtn" aria-label="Cambiar a español">ES</button>
+    <div class="langsw" role="group" aria-label="Language / Idioma">
+      <button type="button" data-l="en" aria-pressed="true">English</button>
+      <button type="button" data-l="es" aria-pressed="false">Español</button>
     </div>
   </div>
 </header>
@@ -117,27 +144,56 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
 <main id="main">
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="wrap">
-    <span class="tag" data-i18n="hero_tag">For students & families · Grades 9–12</span>
-    <h1 data-i18n="hero_h">Your next step after high school, made clear.</h1>
-    <p class="lead" data-i18n="hero_p">Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.</p>
-    <div class="cta">
-      <a class="btn" href="#mentors" data-i18n="cta1">Book a mentor</a>
-      <a class="btn ghost" href="#pathways" data-i18n="cta2">Explore my options</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" data-i18n="hero_tag">For students & families · Grades 9–12</span>
+      <h1 data-i18n="hero_h">Hi! Let's figure out what's next, together.</h1>
+      <p class="lead" data-i18n="hero_p">Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.</p>
+      <div class="cta">
+        <a class="btn gold" href="#mentors" data-i18n="cta1">Book a mentor</a>
+        <a class="btn ghost" href="#pathways" data-i18n="cta2">Explore my options</a>
+      </div>
     </div>
+    <div><svg class="art" viewBox="0 0 480 400" role="img" aria-label="Two students reading an open book with a sparkle above">
+  <circle cx="240" cy="215" r="178" fill="#fff"/>
+  <circle cx="240" cy="215" r="150" fill="#fff6dc"/>
+  <circle cx="395" cy="85" r="30" fill="#f2b441"/>
+  <circle cx="75" cy="135" r="20" fill="#4f74b0" opacity=".28"/>
+  <circle cx="420" cy="300" r="14" fill="#4f74b0" opacity=".28"/>
+  <path d="M240,352 C200,325 140,325 92,342 L92,262 C140,246 200,252 240,284 Z" fill="#7f9bc4"/>
+  <path d="M240,352 C280,325 340,325 388,342 L388,262 C340,246 280,252 240,284 Z" fill="#f2b441"/>
+  <path d="M240,284 L240,352" stroke="#fff" stroke-width="5"/>
+  <rect x="132" y="232" width="86" height="82" rx="34" fill="#4f74b0"/>
+  <circle cx="175" cy="196" r="36" fill="#f1c27d"/>
+  <path d="M139,192 a36,36 0 0 1 72,0 q-36,-24 -72,0z" fill="#26354f"/>
+  <polygon points="130,166 175,146 220,166 175,186" fill="#26354f"/>
+  <line x1="214" y1="168" x2="214" y2="196" stroke="#f2b441" stroke-width="4"/><circle cx="214" cy="199" r="5" fill="#f2b441"/>
+  <circle cx="164" cy="200" r="3.5" fill="#26354f"/><circle cx="187" cy="200" r="3.5" fill="#26354f"/>
+  <path d="M164,212 q11,10 23,0" stroke="#26354f" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <rect x="262" y="232" width="86" height="82" rx="34" fill="#26354f"/>
+  <circle cx="305" cy="196" r="36" fill="#c68a5b"/>
+  <path d="M269,194 a36,36 0 0 1 72,0 q-36,-26 -72,0z" fill="#3b2a20"/><circle cx="305" cy="150" r="14" fill="#3b2a20"/>
+  <circle cx="294" cy="200" r="3.5" fill="#26354f"/><circle cx="317" cy="200" r="3.5" fill="#26354f"/>
+  <path d="M294,212 q11,10 23,0" stroke="#26354f" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M240,60 L250,94 L284,104 L250,114 L240,148 L230,114 L196,104 L230,94 Z" fill="#f2b441"/>
+  <g stroke="#f2b441" stroke-width="5" stroke-linecap="round"><line x1="240" y1="30" x2="240" y2="46"/><line x1="196" y1="50" x2="206" y2="62"/><line x1="284" y1="50" x2="274" y2="62"/></g>
+</svg></div>
+  </div>
+  <div class="wrap">
     <div class="grid">
-      <a class="card big" href="#mentors"><span class="ico" aria-hidden="true">🤝</span><h3 data-i18n="q1_h">I want to talk to someone</h3><p class="muted" data-i18n="q1_p">Schedule time with a counselor or alumni mentor.</p></a>
-      <a class="card big" href="#pathways"><span class="ico" aria-hidden="true">🧭</span><h3 data-i18n="q2_h">I don't know what I want to do</h3><p class="muted" data-i18n="q2_p">Pick your interests and see majors, careers, and paths.</p></a>
-      <a class="card big" href="#resources"><span class="ico" aria-hidden="true">✅</span><h3 data-i18n="q3_h">What should I do this year?</h3><p class="muted" data-i18n="q3_p">A checklist for 9th, 10th, 11th, and 12th grade.</p></a>
-      <a class="card big" href="#money"><span class="ico" aria-hidden="true">💵</span><h3 data-i18n="q4_h">How do we pay for college?</h3><p class="muted" data-i18n="q4_p">Financial aid, scholarships, and loans explained simply.</p></a>
+      <a class="card big" href="#mentors"><span class="badge b1" aria-hidden="true">🤝</span><h3 data-i18n="q1_h">I want to talk to someone</h3><p class="muted" data-i18n="q1_p">Schedule time with a counselor or alumni mentor.</p></a>
+      <a class="card big" href="#pathways"><span class="badge b2" aria-hidden="true">🧭</span><h3 data-i18n="q2_h">I don't know what I want to do</h3><p class="muted" data-i18n="q2_p">Pick your interests and see majors, careers, and paths.</p></a>
+      <a class="card big" href="#resources"><span class="badge b3" aria-hidden="true">✅</span><h3 data-i18n="q3_h">What should I do this year?</h3><p class="muted" data-i18n="q3_p">A checklist for 9th, 10th, 11th, and 12th grade.</p></a>
+      <a class="card big" href="#money"><span class="badge b4" aria-hidden="true">💵</span><h3 data-i18n="q4_h">How do we pay for college?</h3><p class="muted" data-i18n="q4_p">Financial aid, scholarships, and loans explained simply.</p></a>
     </div>
   </div>
 </section>
 
+<div class="wave" style="background:#eaf1fb" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg></div>
 <!-- MENTORS -->
-<section id="mentors">
+<section id="mentors" class="bg-white">
   <div class="wrap">
-    <h2 data-i18n="m_h">Mentorship & appointments</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_m"></span><h2 data-i18n="m_h">Mentorship & appointments</h2></div>
     <p class="lead" data-i18n="m_p">Explore your interests, talk about concerns, learn your options, and build a relationship with someone who can guide you, starting early, not just senior year.</p>
 
     <div class="tabs" role="group" aria-label="Mentor type" id="mentorFilter"></div>
@@ -181,10 +237,12 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
+<div class="wave" style="background:#ffffff" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#fff6dc"/></svg></div>
 <!-- PATHWAYS -->
-<section id="pathways">
+<section id="pathways" class="bg-butter">
   <div class="wrap">
-    <h2 data-i18n="p_h">Explore your pathways</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_p"></span><h2 data-i18n="p_h">Explore your pathways</h2></div>
+    <svg class="sec-art" viewBox="0 0 300 200" role="img" aria-label="A winding road to a flag"><path d="M20,178 C110,178 70,100 150,100 S230,40 270,40" stroke="#4f74b0" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M20,178 C110,178 70,100 150,100 S230,40 270,40" stroke="#fff" stroke-width="3" stroke-dasharray="3 14" fill="none" stroke-linecap="round"/><circle cx="20" cy="178" r="13" fill="#f2b441"/><line x1="270" y1="40" x2="270" y2="6" stroke="#26354f" stroke-width="4"/><path d="M270,6 L296,16 L270,26 Z" fill="#f2b441"/></svg>
     <p class="lead" data-i18n="p_p">There is no single "right" path. Tap everything that sounds interesting to you.</p>
     <div class="chips" id="interestChips" role="group" aria-label="Interests"></div>
     <div id="pathResults" aria-live="polite"></div>
@@ -194,10 +252,11 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
+<div class="wave" style="background:#fff6dc" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#eaf1fb"/></svg></div>
 <!-- RESOURCES BY GRADE -->
-<section id="resources">
+<section id="resources" class="bg-sky">
   <div class="wrap">
-    <h2 data-i18n="r_h">What to do each year</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_r"></span><h2 data-i18n="r_h">What to do each year</h2></div>
     <p class="lead" data-i18n="r_p">Pick your grade. Check items off as you go. Your progress is saved on this device.</p>
     <div class="tabs" role="tablist" aria-label="Grade" id="gradeTabs"></div>
     <div id="gradePanel" role="tabpanel"></div>
@@ -217,19 +276,21 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
+<div class="wave" style="background:#eaf1fb" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg></div>
 <!-- MONEY -->
-<section id="money">
+<section id="money" class="bg-white">
   <div class="wrap">
-    <h2 data-i18n="mo_h">Paying for college, explained</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_mo"></span><h2 data-i18n="mo_h">Paying for college, explained</h2></div>
     <p class="lead" data-i18n="mo_p">Start with free money (grants and scholarships), then work, and only then loans. Never pay to file the FAFSA, it is free.</p>
     <div id="moneyList" style="margin-top:20px"></div>
   </div>
 </section>
 
+<div class="wave" style="background:#ffffff" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#fff6dc"/></svg></div>
 <!-- PARENTS -->
-<section id="parents">
+<section id="parents" class="bg-butter">
   <div class="wrap">
-    <h2 data-i18n="pa_h">Parent & family corner</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_pa"></span><h2 data-i18n="pa_h">Parent & family corner</h2></div>
     <p class="lead" data-i18n="pa_p">You do not need to know the college system to help. These are the words and questions that matter most.</p>
     <div class="two">
       <div><h3 data-i18n="gl_h">Simple glossary</h3><dl id="glossary"></dl></div>
@@ -242,10 +303,11 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
+<div class="wave" style="background:#fff6dc" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#eaf1fb"/></svg></div>
 <!-- KEY DATES -->
-<section id="dates">
+<section id="dates" class="bg-sky">
   <div class="wrap">
-    <h2 data-i18n="d_h">Dates to remember</h2>
+    <div class="sec-h"><span class="eyebrow" data-i18n="eb_d"></span><h2 data-i18n="d_h">Dates to remember</h2></div>
     <div class="grid" id="dateGrid"></div>
     <p class="note" data-i18n="d_note">Dates change each year. Always confirm on the official website or with your counselor.</p>
   </div>
@@ -254,6 +316,7 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem}
 
 <footer>
   <div class="wrap">
+    <div class="lg"><img src="logo.png" alt="Parallax"></div>
     <p data-i18n="foot">Parallax is a student-built prototype. Sample content only; verify details with your school counselor.</p>
   </div>
 </footer>
@@ -271,8 +334,8 @@ const store = {
 
 /* ====== STATIC TRANSLATIONS ====== */
 const T = {
-en:{skip:"Skip to content",textsize:"Change text size",nav_mentors:"Mentors",nav_paths:"Pathways",nav_resources:"Resources",nav_money:"Paying for college",nav_parents:"Parents",
-hero_tag:"For students & families · Grades 9–12",hero_h:"Your next step after high school, made clear.",hero_p:"Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.",
+en:{banner_txt:"¿Prefiere leer en español? Este sitio está disponible en español.",banner_btn:"Ver en español →",eb_m:"Talk to someone",eb_p:"Find your path",eb_r:"Year by year",eb_mo:"Money matters",eb_pa:"For families",eb_d:"Mark your calendar",skip:"Skip to content",nav_mentors:"Mentors",nav_paths:"Pathways",nav_resources:"Resources",nav_money:"Paying for college",nav_parents:"Parents",
+hero_tag:"For students & families · Grades 9–12",hero_h:"Hi! Let's figure out what's next, together.",hero_p:"Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.",
 cta1:"Book a mentor",cta2:"Explore my options",
 q1_h:"I want to talk to someone",q1_p:"Schedule time with a counselor or alumni mentor.",q2_h:"I don't know what I want to do",q2_p:"Pick your interests and see majors, careers, and paths.",q3_h:"What should I do this year?",q3_p:"A checklist for 9th, 10th, 11th, and 12th grade.",q4_h:"How do we pay for college?",q4_p:"Financial aid, scholarships, and loans explained simply.",
 m_h:"Mentorship & appointments",m_p:"Explore your interests, talk about concerns, learn your options, and build a relationship with someone who can guide you, starting early, not just senior year.",m_sample:"Sample mentors shown. Real counselor and alumni profiles will be added by your school.",
@@ -285,8 +348,8 @@ mo_h:"Paying for college, explained",mo_p:"Start with free money (grants and sch
 pa_h:"Parent & family corner",pa_p:"You do not need to know the college system to help. These are the words and questions that matter most.",gl_h:"Simple glossary",q_h:"Questions to ask the counselor",pa_acct:"Coming soon: family accounts, so parents can join meetings and read what was discussed.",
 d_h:"Dates to remember",d_note:"Dates change each year. Always confirm on the official website or with your counselor.",
 foot:"Parallax is a student-built prototype. Sample content only; verify details with your school counselor."},
-es:{skip:"Saltar al contenido",textsize:"Cambiar tamaño del texto",nav_mentors:"Mentores",nav_paths:"Caminos",nav_resources:"Recursos",nav_money:"Pagar la universidad",nav_parents:"Padres",
-hero_tag:"Para estudiantes y familias · Grados 9–12",hero_h:"Tu próximo paso después de la preparatoria, claro y sencillo.",hero_p:"Habla con un mentor real, explora caminos hacia la universidad, el trabajo y el ejército, y recibe ayuda paso a paso para cada grado, para ti y tu familia.",
+es:{banner_txt:"Prefer English? This site is available in English.",banner_btn:"View in English →",eb_m:"Habla con alguien",eb_p:"Encuentra tu camino",eb_r:"Año por año",eb_mo:"Sobre el dinero",eb_pa:"Para las familias",eb_d:"Marca tu calendario",skip:"Saltar al contenido",nav_mentors:"Mentores",nav_paths:"Caminos",nav_resources:"Recursos",nav_money:"Pagar la universidad",nav_parents:"Padres",
+hero_tag:"Para estudiantes y familias · Grados 9–12",hero_h:"¡Hola! Descubramos juntos qué sigue.",hero_p:"Habla con un mentor real, explora caminos hacia la universidad, el trabajo y el ejército, y recibe ayuda paso a paso para cada grado, para ti y tu familia.",
 cta1:"Reservar un mentor",cta2:"Explorar mis opciones",
 q1_h:"Quiero hablar con alguien",q1_p:"Agenda una cita con un consejero o un mentor egresado.",q2_h:"No sé qué quiero hacer",q2_p:"Elige tus intereses y mira carreras, profesiones y caminos.",q3_h:"¿Qué debo hacer este año?",q3_p:"Una lista para 9.º, 10.º, 11.º y 12.º grado.",q4_h:"¿Cómo pagamos la universidad?",q4_p:"Ayuda financiera, becas y préstamos explicados fácilmente.",
 m_h:"Mentoría y citas",m_p:"Explora tus intereses, habla de tus preocupaciones, conoce tus opciones y crea una relación con alguien que te guíe, desde temprano, no solo en el último año.",m_sample:"Se muestran mentores de ejemplo. Tu escuela agregará los perfiles reales de consejeros y egresados.",
@@ -303,10 +366,10 @@ foot:"Parallax es un prototipo creado por estudiantes. Contenido de ejemplo; ver
 
 /* ====== DATA (bilingual pairs) ====== */
 const MENTORS = [
- {name:"Ms. Rivera",type:"counselor",role:{en:"School counselor · All pathways",es:"Consejera escolar · Todos los caminos"},langs:"EN · ES",avail:{en:"Mon & Wed afternoons",es:"Lunes y miércoles por la tarde"}},
- {name:"Daniel Ortiz",type:"alumni",role:{en:"Alumnus · Engineering, state university",es:"Egresado · Ingeniería, universidad estatal"},langs:"EN · ES",avail:{en:"Tue evenings (online)",es:"Martes por la noche (en línea)"}},
- {name:"Priya Shah",type:"alumni",role:{en:"Alumna · Community college → Nursing",es:"Egresada · Colegio comunitario → Enfermería"},langs:"EN",avail:{en:"Thu evenings (online)",es:"Jueves por la noche (en línea)"}},
- {name:"Marcus Lee",type:"alumni",role:{en:"Alumnus · Skilled trades & military",es:"Egresado · Oficios y ejército"},langs:"EN",avail:{en:"Saturday mornings",es:"Sábados por la mañana"}}
+ {av:{bg:"#dfe9fa",skin:"#e0ac85",hair:"#3b2a20",shirt:"#4f74b0",long:true},name:"Ms. Rivera",type:"counselor",role:{en:"School counselor · All pathways",es:"Consejera escolar · Todos los caminos"},langs:"EN · ES",avail:{en:"Mon & Wed afternoons",es:"Lunes y miércoles por la tarde"}},
+ {av:{bg:"#ffe9b3",skin:"#c68a5b",hair:"#26354f",shirt:"#26354f"},name:"Daniel Ortiz",type:"alumni",role:{en:"Alumnus · Engineering, state university",es:"Egresado · Ingeniería, universidad estatal"},langs:"EN · ES",avail:{en:"Tue evenings (online)",es:"Martes por la noche (en línea)"}},
+ {av:{bg:"#dff1e6",skin:"#b97b50",hair:"#1d1d2b",shirt:"#f2b441",long:true},name:"Priya Shah",type:"alumni",role:{en:"Alumna · Community college → Nursing",es:"Egresada · Colegio comunitario → Enfermería"},langs:"EN",avail:{en:"Thu evenings (online)",es:"Jueves por la noche (en línea)"}},
+ {av:{bg:"#fde0dc",skin:"#f1c27d",hair:"#5a3a22",shirt:"#7f9bc4"},name:"Marcus Lee",type:"alumni",role:{en:"Alumnus · Skilled trades & military",es:"Egresado · Oficios y ejército"},langs:"EN",avail:{en:"Saturday mornings",es:"Sábados por la mañana"}}
 ];
 const MENTOR_FILTERS = [["all",{en:"All",es:"Todos"}],["counselor",{en:"Counselors",es:"Consejeros"}],["alumni",{en:"Alumni",es:"Egresados"}]];
 
@@ -360,10 +423,10 @@ const LBL = {
   none:{en:"Tap an interest above to see ideas.",es:"Toca un interés arriba para ver ideas."}
 };
 const ROUTES = [
- {ico:"🎓",t:{en:"College",es:"Universidad"},d:{en:"4-year university or 2-year community college. Good for careers that require a degree. Community college is a lower-cost way to start and transfer.",es:"Universidad de 4 años o colegio comunitario de 2 años. Ideal para carreras que requieren título. El colegio comunitario es una forma más económica de empezar y transferirse."},l:["https://bigfuture.collegeboard.org","BigFuture (College Board)"]},
- {ico:"🛠️",t:{en:"Work, trades & certificates",es:"Trabajo, oficios y certificados"},d:{en:"Go straight into a job, a paid apprenticeship, or a short training program that leads to a licensed career.",es:"Empieza directo en un empleo, un aprendizaje pagado o un programa corto que lleva a una carrera con licencia."},l:["https://www.careeronestop.org","CareerOneStop"]},
- {ico:"🎖️",t:{en:"Military",es:"Ejército"},d:{en:"Paid training, benefits, and money for college (GI Bill). Talk to a recruiter AND a counselor. Ask every question before deciding.",es:"Capacitación pagada, beneficios y dinero para la universidad (GI Bill). Habla con un reclutador Y con un consejero. Haz todas tus preguntas antes de decidir."},l:["https://www.todaysmilitary.com","Today's Military"]},
- {ico:"🌎",t:{en:"Gap year or service",es:"Año sabático o servicio"},d:{en:"A planned year of service, work, or travel before college, such as AmeriCorps. Make a plan with a mentor first.",es:"Un año planeado de servicio, trabajo o viaje antes de la universidad, como AmeriCorps. Haz un plan con un mentor primero."},l:["https://americorps.gov","AmeriCorps"]}
+ {b:"b1",ico:"🎓",t:{en:"College",es:"Universidad"},d:{en:"4-year university or 2-year community college. Good for careers that require a degree. Community college is a lower-cost way to start and transfer.",es:"Universidad de 4 años o colegio comunitario de 2 años. Ideal para carreras que requieren título. El colegio comunitario es una forma más económica de empezar y transferirse."},l:["https://bigfuture.collegeboard.org","BigFuture (College Board)"]},
+ {b:"b2",ico:"🛠️",t:{en:"Work, trades & certificates",es:"Trabajo, oficios y certificados"},d:{en:"Go straight into a job, a paid apprenticeship, or a short training program that leads to a licensed career.",es:"Empieza directo en un empleo, un aprendizaje pagado o un programa corto que lleva a una carrera con licencia."},l:["https://www.careeronestop.org","CareerOneStop"]},
+ {b:"b3",ico:"🎖️",t:{en:"Military",es:"Ejército"},d:{en:"Paid training, benefits, and money for college (GI Bill). Talk to a recruiter AND a counselor. Ask every question before deciding.",es:"Capacitación pagada, beneficios y dinero para la universidad (GI Bill). Habla con un reclutador Y con un consejero. Haz todas tus preguntas antes de decidir."},l:["https://www.todaysmilitary.com","Today's Military"]},
+ {b:"b4",ico:"🌎",t:{en:"Gap year or service",es:"Año sabático o servicio"},d:{en:"A planned year of service, work, or travel before college, such as AmeriCorps. Make a plan with a mentor first.",es:"Un año planeado de servicio, trabajo o viaje antes de la universidad, como AmeriCorps. Haz un plan con un mentor primero."},l:["https://americorps.gov","AmeriCorps"]}
 ];
 
 const GRADES = {
@@ -465,7 +528,6 @@ let lang = store.get("lang", (navigator.language||"en").toLowerCase().startsWith
 let grade = store.get("grade", 9);
 let mentorFilter = "all";
 let picked = store.get("interests", []);
-let sizeStep = store.get("size", 0);
 const L = o => o[lang];
 const $ = s => document.querySelector(s);
 
@@ -475,16 +537,17 @@ function applyStatic(){
   document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[lang][e.dataset.i18n]; if(v) e.textContent=v;});
   document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=T[lang][e.dataset.i18nPh]);
   document.querySelectorAll("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T[lang][e.dataset.i18nAria]));
-  const b=$("#langBtn"); b.textContent = lang==="en"?"ES":"EN"; b.setAttribute("aria-label", lang==="en"?"Cambiar a español":"Switch to English");
+  document.querySelectorAll(".langsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
   document.title = lang==="en" ? "Parallax – College & Career Guidance" : "Parallax – Guía universitaria y profesional";
 }
+function avatar(a){return `<svg viewBox="0 0 80 80" aria-hidden="true"><rect width="80" height="80" fill="${a.bg}"/>${a.long?`<rect x="22" y="26" width="36" height="34" rx="16" fill="${a.hair}"/>`:""}<rect x="14" y="56" width="52" height="40" rx="22" fill="${a.shirt}"/><circle cx="40" cy="36" r="16" fill="${a.skin}"/><path d="M24,34 a16,16 0 0 1 32,0 q-16,-10 -32,0z" fill="${a.hair}"/><circle cx="34" cy="38" r="2" fill="#26354f"/><circle cx="46" cy="38" r="2" fill="#26354f"/><path d="M34,44 q6,5 12,0" stroke="#26354f" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`}
 function renderMentors(){
   $("#mentorFilter").innerHTML = MENTOR_FILTERS.map(([k,l])=>`<button type="button" class="tab" aria-pressed="${mentorFilter===k}" aria-selected="${mentorFilter===k}" data-k="${k}">${L(l)}</button>`).join("");
   $("#mentorFilter").querySelectorAll("button").forEach(b=>b.onclick=()=>{mentorFilter=b.dataset.k;renderMentors();});
   const list = MENTORS.filter(m=>mentorFilter==="all"||m.type===mentorFilter);
   $("#mentorGrid").innerHTML = list.map(m=>`
-    <div class="card"><span class="tag">${m.type==="counselor"?(lang==="en"?"Counselor":"Consejero"):(lang==="en"?"Alumni":"Egresado")}</span>
-    <h3>${m.name}</h3><p class="muted" style="margin:0 0 6px">${L(m.role)}</p>
+    <div class="card"><div class="mentor-top">${avatar(m.av)}<div><span class="tag">${m.type==="counselor"?(lang==="en"?"Counselor":"Consejero"):(lang==="en"?"Alumni":"Egresado")}</span>
+    <h3>${m.name}</h3></div></div><p class="muted" style="margin:0 0 6px">${L(m.role)}</p>
     <p style="margin:0">🗓 ${L(m.avail)}<br>🗣 ${m.langs}</p>
     <button class="btn ghost sm" style="margin-top:12px" data-pick="${m.name}">${lang==="en"?"Request this mentor":"Solicitar este mentor"}</button></div>`).join("");
   $("#mentorGrid").querySelectorAll("[data-pick]").forEach(b=>b.onclick=()=>{$("#fMentor").value=b.dataset.pick;$("#apptForm").scrollIntoView({behavior:"smooth",block:"center"});$("#fName").focus();});
@@ -504,7 +567,7 @@ function renderInterests(){
     : `<p class="muted">${L(LBL.none)}</p>`;
 }
 function renderRoutes(){
-  $("#routes").innerHTML = ROUTES.map(r=>`<div class="card"><span class="ico" aria-hidden="true">${r.ico}</span><h3>${L(r.t)}</h3><p class="muted">${L(r.d)}</p><a href="${r.l[0]}" target="_blank" rel="noopener">${r.l[1]} ↗</a></div>`).join("");
+  $("#routes").innerHTML = ROUTES.map(r=>`<div class="card"><span class="badge ${r.b}" aria-hidden="true">${r.ico}</span><h3>${L(r.t)}</h3><p class="muted">${L(r.d)}</p><a href="${r.l[0]}" target="_blank" rel="noopener">${r.l[1]} ↗</a></div>`).join("");
 }
 function renderGrades(){
   $("#gradeTabs").innerHTML = [9,10,11,12].map(g=>`<button role="tab" class="tab" aria-selected="${g==grade}" data-g="${g}">${lang==="en"?g+"th":g+".º"}</button>`).join("");
@@ -528,9 +591,9 @@ function renderAll(){applyStatic();renderMentors();renderInterests();renderRoute
   const ok=$("#apptOk"); if(!ok.hidden){ok.textContent = lang==="en"?"✅ Request received. A counselor will contact you to confirm.":"✅ Solicitud recibida. Un consejero se comunicará contigo para confirmar.";}}
 
 /* ====== EVENTS ====== */
-$("#langBtn").onclick=()=>{lang=lang==="en"?"es":"en";store.set("lang",lang);renderAll();};
-function applySize(){document.documentElement.style.setProperty("--fs",[18,21,24][sizeStep]+"px");}
-$("#textSize").onclick=()=>{sizeStep=(sizeStep+1)%3;store.set("size",sizeStep);applySize();};
+function setLang(l){lang=l;store.set("lang",lang);renderAll();}
+document.querySelectorAll(".langsw button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+$("#bannerBtn").onclick=()=>setLang(lang==="en"?"es":"en");
 
 $("#apptForm").onsubmit=async e=>{
   e.preventDefault();
@@ -552,7 +615,7 @@ $("#icsBtn").onclick=()=>{
   const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download="parallax-monthly-meeting.ics"; a.click();
 };
 
-applySize(); renderAll();
+renderAll();
 </script>
 </body>
 </html>
