@@ -3,155 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Parallax – College & Career Guidance</title>
-<meta name="description" content="Free mentorship, pathway exploration, and resources for students and parents, grades 9–12.">
+<title>Parallax</title>
+<meta name="description" content="Free mentorship, pathway exploration, and resources for students and parents, grades 9–12. English and Spanish.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="logo.png">
-<style>
-:root{
-  --navy:#26354f; --blue:#4f74b0; --blue-d:#3b5c94; --sky:#eaf1fb; --gold:#f2b441; --gold-d:#d99a1e; --butter:#fff6dc;
-  --ink:#26354f; --muted:#5d6b84; --line:#dbe4f2; --card:#fff; --ok:#1f7a4d;
-}
-*{box-sizing:border-box}
-html{font-size:18px;scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--ink);font-family:"Nunito",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
-h1,h2,h3{font-family:"Fredoka","Nunito",system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0 0 .5em;color:var(--navy)}
-h1{font-size:2.9rem} h2{font-size:2.1rem} h3{font-size:1.3rem}
-a{color:var(--blue-d)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
-.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:10px 14px;z-index:99}
-.skip:focus{left:8px;top:8px}
-:focus-visible{outline:3px solid var(--gold-d);outline-offset:3px}
-
-/* language banner */
-.langbar{background:var(--gold);color:var(--navy);font-weight:700;text-align:center;padding:8px 12px;font-size:.95rem}
-.langbar button{margin-left:8px;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 16px;font:inherit;font-weight:800;cursor:pointer;min-height:40px}
-.langbar button:hover{background:#17223a}
-
-header{position:sticky;top:0;background:#fff;border-bottom:3px solid var(--sky);z-index:10}
-.bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:8px 0}
-.logo img{height:68px;width:auto;display:block}
-nav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
-nav a{padding:10px 13px;border-radius:999px;text-decoration:none;color:var(--navy);font-weight:800;font-size:.95rem}
-nav a:hover{background:var(--butter)}
-.langsw{display:flex;border:3px solid var(--navy);border-radius:999px;overflow:hidden;background:#fff}
-.langsw button{border:0;background:transparent;color:var(--navy);font:inherit;font-weight:800;padding:8px 16px;min-height:46px;cursor:pointer}
-.langsw button[aria-pressed="true"]{background:var(--navy);color:#fff}
-.langsw button:not([aria-pressed="true"]):hover{background:var(--butter)}
-
-.btn{min-height:52px;padding:10px 26px;border-radius:999px;border:3px solid var(--blue);background:var(--blue);color:#fff;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,box-shadow .15s}
-.btn:hover{background:var(--blue-d);border-color:var(--blue-d);transform:translateY(-2px);box-shadow:0 6px 14px rgba(38,53,79,.2)}
-.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-.btn.gold:hover{background:var(--gold-d);border-color:var(--gold-d)}
-.btn.ghost{background:#fff;color:var(--blue-d)}
-.btn.ghost:hover{background:var(--sky)}
-.btn.sm{min-height:46px;padding:6px 18px;font-size:.92rem}
-
-/* sections */
-section{padding:56px 0 64px}
-.bg-sky{background:var(--sky)} .bg-white{background:#fff} .bg-butter{background:var(--butter)}
-.eyebrow{display:inline-block;background:var(--gold);color:var(--navy);border-radius:999px;padding:3px 14px;font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
-.sec-h h2::after{content:"";display:block;width:64px;height:6px;border-radius:9px;background:var(--gold);margin-top:10px}
-.lead{color:var(--muted);max-width:62ch;font-size:1.08rem}
-.wave{line-height:0}
-.wave svg{display:block;width:100%;height:56px}
-
-.hero{padding:44px 0 56px;background:linear-gradient(180deg,#fff 0,var(--sky) 100%)}
-.hero-grid{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:center}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.hero svg.art{width:100%;height:auto;animation:float 6s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-@media (prefers-reduced-motion:reduce){.hero svg.art{animation:none}*{transition:none!important}}
-
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));margin-top:26px}
-.card{background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 4px 0 var(--line)}
-.card.big{text-decoration:none;color:inherit;display:block;transition:transform .15s,box-shadow .15s,border-color .15s}
-.card.big:hover{transform:translateY(-4px) rotate(-.6deg);border-color:var(--gold);box-shadow:0 8px 0 var(--gold)}
-.badge{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:10px}
-.b1{background:#dfe9fa}.b2{background:#ffe9b3}.b3{background:#dff1e6}.b4{background:#fde0dc}
-.tag{display:inline-block;background:var(--sky);color:var(--blue-d);border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:800;margin-bottom:8px}
-.muted{color:var(--muted)}
-.note{background:#fff;border:2px dashed var(--gold-d);padding:12px 16px;border-radius:16px;margin-top:22px}
-
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 12px}
-.tab{min-height:50px;padding:8px 22px;border-radius:999px;border:3px solid var(--line);background:#fff;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}
-.tab:hover{border-color:var(--blue)}
-.tab[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
-
-form{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 4px 0 var(--line)}
-label{font-weight:800;display:block;margin-bottom:4px}
-input,select,textarea{width:100%;min-height:50px;padding:10px 14px;font:inherit;border:3px solid var(--line);border-radius:14px;background:#fff;color:var(--navy)}
-input:focus,select:focus,textarea:focus{border-color:var(--blue)}
-textarea{min-height:90px}
-.full{grid-column:1/-1}
-.ok{background:#e6f5ec;color:#14532d;border:3px solid var(--ok);padding:14px;border-radius:16px;margin-top:14px}
-
-.chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
-.chip{min-height:50px;padding:8px 20px;border-radius:999px;border:3px solid var(--blue);background:#fff;color:var(--navy);font:inherit;font-weight:800;cursor:pointer;transition:transform .12s}
-.chip:hover{transform:scale(1.05)}
-.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold-d)}
-
-.check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-.check li{background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 16px;display:flex;gap:14px;align-items:flex-start}
-.check input{width:28px;height:28px;min-height:0;margin-top:2px;flex:none;accent-color:var(--blue)}
-.check label{font-weight:600;margin:0}
-.check input:checked + label{text-decoration:line-through;color:var(--muted)}
-.progress{height:16px;background:#fff;border:2px solid var(--line);border-radius:99px;overflow:hidden;margin:6px 0 16px}
-.progress div{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-d));width:0;transition:width .3s}
-
-details{background:#fff;border:2px solid var(--line);border-radius:18px;padding:4px 18px;margin-bottom:12px}
-summary{cursor:pointer;font-weight:800;padding:12px 0;min-height:50px;font-size:1.05rem}
-details[open]{border-color:var(--blue)}
-details[open] summary{color:var(--blue-d)}
-details ul{margin:0 0 12px;padding-left:20px}
-dl{margin:0}dt{font-weight:800;margin-top:12px;color:var(--blue-d)}dd{margin:0 0 6px;color:var(--muted)}
-.mentor-top{display:flex;gap:14px;align-items:center;margin-bottom:8px}
-.mentor-top svg{width:72px;height:72px;flex:none;border-radius:50%}
-.mentor-top h3{margin:0}
-.two{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.sec-art{float:right;width:min(260px,38%);margin:0 0 10px 18px}
-
-footer{background:var(--navy);color:#d6deee;padding:34px 0;text-align:center}
-footer .lg{display:inline-block;background:#fff;border-radius:20px;padding:6px 18px;margin-bottom:12px}
-footer img{height:64px;display:block}
-@media (max-width:760px){h1{font-size:2.2rem}h2{font-size:1.75rem}.hero-grid{grid-template-columns:1fr}nav{display:none}.sec-art{display:none}.logo img{height:56px}}
-@media print{header,.langbar,.cta,form,footer,.wave{display:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="index">
 <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
-
-<div class="langbar"><span data-i18n="banner_txt">¿Prefiere leer en español? Este sitio está disponible en español.</span><button id="bannerBtn" type="button" data-i18n="banner_btn">Ver en español</button></div>
-<header>
-  <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="Parallax"><img src="logo.png" alt="Parallax logo"></a>
-    <nav aria-label="Main">
-      <a href="#mentors" data-i18n="nav_mentors">Mentors</a>
-      <a href="#pathways" data-i18n="nav_paths">Pathways</a>
-      <a href="#resources" data-i18n="nav_resources">Resources</a>
-      <a href="#money" data-i18n="nav_money">Paying for college</a>
-      <a href="#parents" data-i18n="nav_parents">Parents</a>
-    </nav>
-    <div class="langsw" role="group" aria-label="Language / Idioma">
-      <button type="button" data-l="en" aria-pressed="true">English</button>
-      <button type="button" data-l="es" aria-pressed="false">Español</button>
-    </div>
-  </div>
-</header>
-
+<div id="site-header"></div>
 <main id="main">
-<!-- HERO -->
-<section class="hero" id="top">
+<section class="hero bg-sky" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow" data-i18n="hero_tag">For students & families · Grades 9–12</span>
-      <h1 data-i18n="hero_h">Hi! Let's figure out what's next, together.</h1>
-      <p class="lead" data-i18n="hero_p">Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.</p>
+      <span class="eyebrow" data-i18n="hero_tag"></span>
+      <h1 data-i18n="hero_h"></h1>
+      <p class="lead" data-i18n="hero_p"></p>
       <div class="cta">
-        <a class="btn gold" href="#mentors" data-i18n="cta1">Book a mentor</a>
-        <a class="btn ghost" href="#pathways" data-i18n="cta2">Explore my options</a>
+        <a class="btn gold" href="mentors.html" data-i18n="cta1"></a>
+        <a class="btn ghost" href="pathways.html" data-i18n="cta2"></a>
       </div>
     </div>
     <div><svg class="art" viewBox="0 0 480 400" role="img" aria-label="Two students reading an open book with a sparkle above">
@@ -179,443 +50,69 @@ footer img{height:64px;display:block}
   <g stroke="#f2b441" stroke-width="5" stroke-linecap="round"><line x1="240" y1="30" x2="240" y2="46"/><line x1="196" y1="50" x2="206" y2="62"/><line x1="284" y1="50" x2="274" y2="62"/></g>
 </svg></div>
   </div>
+</section>
+
+<section class="bg-white">
   <div class="wrap">
+    <div class="sec-h"><span class="eyebrow" data-i18n="about_eb"></span><h2 data-i18n="about_h"></h2></div>
+    <p class="lead" data-i18n="about_p"></p>
+    <h3 style="margin-top:30px" data-i18n="why_h"></h3>
     <div class="grid">
-      <a class="card big" href="#mentors"><span class="badge b1" aria-hidden="true">🤝</span><h3 data-i18n="q1_h">I want to talk to someone</h3><p class="muted" data-i18n="q1_p">Schedule time with a counselor or alumni mentor.</p></a>
-      <a class="card big" href="#pathways"><span class="badge b2" aria-hidden="true">🧭</span><h3 data-i18n="q2_h">I don't know what I want to do</h3><p class="muted" data-i18n="q2_p">Pick your interests and see majors, careers, and paths.</p></a>
-      <a class="card big" href="#resources"><span class="badge b3" aria-hidden="true">✅</span><h3 data-i18n="q3_h">What should I do this year?</h3><p class="muted" data-i18n="q3_p">A checklist for 9th, 10th, 11th, and 12th grade.</p></a>
-      <a class="card big" href="#money"><span class="badge b4" aria-hidden="true">💵</span><h3 data-i18n="q4_h">How do we pay for college?</h3><p class="muted" data-i18n="q4_p">Financial aid, scholarships, and loans explained simply.</p></a>
+      <div class="card"><span class="badge b1" aria-hidden="true">⏰</span><h3 data-i18n="why1_h"></h3><p class="muted" data-i18n="why1_p"></p></div>
+      <div class="card"><span class="badge b2" aria-hidden="true">🌱</span><h3 data-i18n="why2_h"></h3><p class="muted" data-i18n="why2_p"></p></div>
+      <div class="card"><span class="badge b3" aria-hidden="true">💵</span><h3 data-i18n="why3_h"></h3><p class="muted" data-i18n="why3_p"></p></div>
+      <div class="card"><span class="badge b4" aria-hidden="true">👨‍👩‍👧</span><h3 data-i18n="why4_h"></h3><p class="muted" data-i18n="why4_p"></p></div>
     </div>
   </div>
 </section>
 
-<div class="wave" style="background:#eaf1fb" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg></div>
-<!-- MENTORS -->
-<section id="mentors" class="bg-white">
+<section class="bg-butter">
   <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_m"></span><h2 data-i18n="m_h">Mentorship & appointments</h2></div>
-    <p class="lead" data-i18n="m_p">Explore your interests, talk about concerns, learn your options, and build a relationship with someone who can guide you, starting early, not just senior year.</p>
-
-    <div class="tabs" role="group" aria-label="Mentor type" id="mentorFilter"></div>
-    <div class="grid" id="mentorGrid"></div>
-    <p class="note" data-i18n="m_sample">Sample mentors shown. Real counselor and alumni profiles will be added by your school.</p>
-
-    <div class="two" style="margin-top:36px">
-      <div>
-        <h3 data-i18n="req_h">Request an appointment</h3>
-        <form id="apptForm">
-          <div><label for="fName" data-i18n="f_name">Name</label><input id="fName" required autocomplete="name"></div>
-          <div><label for="fRole" data-i18n="f_role">I am a…</label>
-            <select id="fRole"><option value="student" data-i18n="role_s">Student</option><option value="parent" data-i18n="role_p">Parent / guardian</option></select></div>
-          <div><label for="fGrade" data-i18n="f_grade">Grade</label>
-            <select id="fGrade"><option>9</option><option>10</option><option>11</option><option>12</option></select></div>
-          <div><label for="fMentor" data-i18n="f_mentor">Mentor</label><select id="fMentor"></select></div>
-          <div><label for="fDate" data-i18n="f_date">Preferred date</label><input id="fDate" type="date" required></div>
-          <div><label for="fFormat" data-i18n="f_format">Format</label>
-            <select id="fFormat"><option value="online" data-i18n="fmt_o">Online (video call)</option><option value="person" data-i18n="fmt_p">In person</option></select></div>
-          <div><label for="fLang" data-i18n="f_lang">Language for the meeting</label>
-            <select id="fLang"><option value="en">English</option><option value="es">Español</option></select></div>
-          <div><label for="fContact" data-i18n="f_contact">Email or phone</label><input id="fContact" required></div>
-          <div class="full"><label for="fTopic" data-i18n="f_topic">What would you like to talk about?</label>
-            <textarea id="fTopic" data-i18n-ph="f_topic_ph" placeholder="Example: I'm not sure what major to pick."></textarea></div>
-          <div class="full"><button class="btn" type="submit" data-i18n="f_submit">Send request</button></div>
-        </form>
-        <div id="apptOk" class="ok" role="status" hidden></div>
-      </div>
-      <div>
-        <h3 data-i18n="mon_h">Monthly check-in meetings</h3>
-        <p class="muted" data-i18n="mon_p">Every student meets with a mentor once a month. Parents are welcome to join. Add the recurring meeting to your calendar:</p>
-        <div class="card">
-          <strong data-i18n="mon_when">First Tuesday of every month · 4:00 PM</strong>
-          <p class="muted" style="margin:.4rem 0 1rem" data-i18n="mon_where">Counseling office or online link (set by your school)</p>
-          <button class="btn ghost" id="icsBtn" data-i18n="mon_ics">Add to my calendar (.ics)</button>
-        </div>
-        <h3 style="margin-top:22px" data-i18n="ask_h">Good things to bring up</h3>
-        <ul class="muted"><li data-i18n="ask1">What I enjoy and what I'm good at</li><li data-i18n="ask2">Classes I should take next</li><li data-i18n="ask3">Worries about cost or about being first in my family to go</li><li data-i18n="ask4">Jobs, trades, military, or gap-year options</li></ul>
-      </div>
+    <div class="sec-h"><span class="eyebrow" data-i18n="offer_eb"></span><h2 data-i18n="offer_h"></h2></div>
+    <div class="grid">
+      <a class="card big linkcard" href="mentors.html"><span class="badge b1" aria-hidden="true">🤝</span><h3><span data-i18n="m_h"></span></h3><p class="muted" data-i18n="off1_p"></p><span class="go" data-i18n="off_go"></span></a>
+      <a class="card big linkcard" href="pathways.html"><span class="badge b2" aria-hidden="true">🧭</span><h3><span data-i18n="p_h"></span></h3><p class="muted" data-i18n="off2_p"></p><span class="go" data-i18n="off_go"></span></a>
+      <a class="card big linkcard" href="resources.html"><span class="badge b3" aria-hidden="true">✅</span><h3><span data-i18n="r_h"></span></h3><p class="muted" data-i18n="off3_p"></p><span class="go" data-i18n="off_go"></span></a>
+      <a class="card big linkcard" href="money.html"><span class="badge b4" aria-hidden="true">💰</span><h3><span data-i18n="nav_money"></span></h3><p class="muted" data-i18n="off4_p"></p><span class="go" data-i18n="off_go"></span></a>
+      <a class="card big linkcard" href="parents.html"><span class="badge b1" aria-hidden="true">🏡</span><h3><span data-i18n="pa_h"></span></h3><p class="muted" data-i18n="off5_p"></p><span class="go" data-i18n="off_go"></span></a>
     </div>
   </div>
 </section>
 
-<div class="wave" style="background:#ffffff" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#fff6dc"/></svg></div>
-<!-- PATHWAYS -->
-<section id="pathways" class="bg-butter">
+<section class="bg-white">
   <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_p"></span><h2 data-i18n="p_h">Explore your pathways</h2></div>
-    <svg class="sec-art" viewBox="0 0 300 200" role="img" aria-label="A winding road to a flag"><path d="M20,178 C110,178 70,100 150,100 S230,40 270,40" stroke="#4f74b0" stroke-width="22" fill="none" stroke-linecap="round"/><path d="M20,178 C110,178 70,100 150,100 S230,40 270,40" stroke="#fff" stroke-width="3" stroke-dasharray="3 14" fill="none" stroke-linecap="round"/><circle cx="20" cy="178" r="13" fill="#f2b441"/><line x1="270" y1="40" x2="270" y2="6" stroke="#26354f" stroke-width="4"/><path d="M270,6 L296,16 L270,26 Z" fill="#f2b441"/></svg>
-    <p class="lead" data-i18n="p_p">There is no single "right" path. Tap everything that sounds interesting to you.</p>
-    <div class="chips" id="interestChips" role="group" aria-label="Interests"></div>
-    <div id="pathResults" aria-live="polite"></div>
-
-    <h3 style="margin-top:36px" data-i18n="pt_h">The four main routes</h3>
-    <div class="grid" id="routes"></div>
-  </div>
-</section>
-
-<div class="wave" style="background:#fff6dc" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#eaf1fb"/></svg></div>
-<!-- RESOURCES BY GRADE -->
-<section id="resources" class="bg-sky">
-  <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_r"></span><h2 data-i18n="r_h">What to do each year</h2></div>
-    <p class="lead" data-i18n="r_p">Pick your grade. Check items off as you go. Your progress is saved on this device.</p>
-    <div class="tabs" role="tablist" aria-label="Grade" id="gradeTabs"></div>
-    <div id="gradePanel" role="tabpanel"></div>
-
-    <div class="two" style="margin-top:40px">
-      <div>
-        <h3 data-i18n="res_h">Build your resume</h3>
-        <p class="muted" data-i18n="res_p">Colleges and employers look for what you do outside class, not only grades.</p>
-        <ul id="resumeList"></ul>
-      </div>
-      <div>
-        <h3 data-i18n="act_h">After-school & volunteering ideas</h3>
-        <ul id="actList"></ul>
-        <p><a href="https://www.volunteermatch.org" target="_blank" rel="noopener" data-i18n="act_link">Find volunteer opportunities near you ↗</a></p>
-      </div>
+    <div class="sec-h"><span class="eyebrow" data-i18n="how_eb"></span><h2 data-i18n="how_h"></h2></div>
+    <div class="steps">
+      <div class="step"><h3 data-i18n="how1_h"></h3><p class="muted" data-i18n="how1_p"></p></div>
+      <div class="step"><h3 data-i18n="how2_h"></h3><p class="muted" data-i18n="how2_p"></p></div>
+      <div class="step"><h3 data-i18n="how3_h"></h3><p class="muted" data-i18n="how3_p"></p></div>
     </div>
   </div>
 </section>
 
-<div class="wave" style="background:#eaf1fb" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg></div>
-<!-- MONEY -->
-<section id="money" class="bg-white">
-  <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_mo"></span><h2 data-i18n="mo_h">Paying for college, explained</h2></div>
-    <p class="lead" data-i18n="mo_p">Start with free money (grants and scholarships), then work, and only then loans. Never pay to file the FAFSA, it is free.</p>
-    <div id="moneyList" style="margin-top:20px"></div>
-  </div>
-</section>
+<section class="bg-sky"><div class="wrap prose" data-block="home.timeline"></div></section>
 
-<div class="wave" style="background:#ffffff" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#fff6dc"/></svg></div>
-<!-- PARENTS -->
-<section id="parents" class="bg-butter">
+<section class="bg-butter"><div class="wrap prose" data-block="home.myths"></div></section>
+
+<section class="bg-white">
   <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_pa"></span><h2 data-i18n="pa_h">Parent & family corner</h2></div>
-    <p class="lead" data-i18n="pa_p">You do not need to know the college system to help. These are the words and questions that matter most.</p>
-    <div class="two">
-      <div><h3 data-i18n="gl_h">Simple glossary</h3><dl id="glossary"></dl></div>
-      <div>
-        <h3 data-i18n="q_h">Questions to ask the counselor</h3>
-        <ul id="parentQs"></ul>
-        <div class="note" data-i18n="pa_acct">Coming soon: family accounts, so parents can join meetings and read what was discussed.</div>
-      </div>
+    <div class="sec-h"><span class="eyebrow" data-i18n="who_eb"></span><h2 data-i18n="who_h"></h2></div>
+    <div class="two" style="margin-top:22px">
+      <div class="card"><span class="badge b2" aria-hidden="true">🎒</span><h3 data-i18n="who1_h"></h3><p class="muted" data-i18n="who1_p"></p></div>
+      <div class="card"><span class="badge b3" aria-hidden="true">👪</span><h3 data-i18n="who2_h"></h3><p class="muted" data-i18n="who2_p"></p></div>
     </div>
-  </div>
+</div>
 </section>
 
-<div class="wave" style="background:#fff6dc" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,84 480,0 720,32 C960,64 1200,8 1440,40 L1440,80 L0,80 Z" fill="#eaf1fb"/></svg></div>
-<!-- KEY DATES -->
-<section id="dates" class="bg-sky">
-  <div class="wrap">
-    <div class="sec-h"><span class="eyebrow" data-i18n="eb_d"></span><h2 data-i18n="d_h">Dates to remember</h2></div>
-    <div class="grid" id="dateGrid"></div>
-    <p class="note" data-i18n="d_note">Dates change each year. Always confirm on the official website or with your counselor.</p>
-  </div>
-</section>
+<section class="bg-sky"><div class="wrap prose" data-block="home.faq"></div></section>
+
+<section class="bg-white"><div class="wrap"><div class="cta-band" style="margin-top:0">
+      <h2 data-i18n="ready_h"></h2>
+      <div class="cta"><a class="btn gold" href="mentors.html" data-i18n="cta1"></a><a class="btn ghost" href="resources.html" data-i18n="q3_h"></a></div>
+    </div></div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div class="lg"><img src="logo.png" alt="Parallax"></div>
-    <p data-i18n="foot">Parallax is a student-built prototype. Sample content only; verify details with your school counselor.</p>
-  </div>
-</footer>
-
-<script>
-/* ====== CONFIG ====== */
-// Optional: paste a Formspree (or similar) URL to receive appointment requests by email.
-const FORM_ENDPOINT = "";   // e.g. "https://formspree.io/f/xxxxxxx"
-
-/* ====== SAFE STORAGE ====== */
-const store = {
-  get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},
-  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-};
-
-/* ====== STATIC TRANSLATIONS ====== */
-const T = {
-en:{banner_txt:"¿Prefiere leer en español? Este sitio está disponible en español.",banner_btn:"Ver en español →",eb_m:"Talk to someone",eb_p:"Find your path",eb_r:"Year by year",eb_mo:"Money matters",eb_pa:"For families",eb_d:"Mark your calendar",skip:"Skip to content",nav_mentors:"Mentors",nav_paths:"Pathways",nav_resources:"Resources",nav_money:"Paying for college",nav_parents:"Parents",
-hero_tag:"For students & families · Grades 9–12",hero_h:"Hi! Let's figure out what's next, together.",hero_p:"Talk to a real mentor, explore college, work, and military paths, and get simple step-by-step help for every grade, for you and your family.",
-cta1:"Book a mentor",cta2:"Explore my options",
-q1_h:"I want to talk to someone",q1_p:"Schedule time with a counselor or alumni mentor.",q2_h:"I don't know what I want to do",q2_p:"Pick your interests and see majors, careers, and paths.",q3_h:"What should I do this year?",q3_p:"A checklist for 9th, 10th, 11th, and 12th grade.",q4_h:"How do we pay for college?",q4_p:"Financial aid, scholarships, and loans explained simply.",
-m_h:"Mentorship & appointments",m_p:"Explore your interests, talk about concerns, learn your options, and build a relationship with someone who can guide you, starting early, not just senior year.",m_sample:"Sample mentors shown. Real counselor and alumni profiles will be added by your school.",
-req_h:"Request an appointment",f_name:"Name",f_role:"I am a…",role_s:"Student",role_p:"Parent / guardian",f_grade:"Grade",f_mentor:"Mentor",f_date:"Preferred date",f_format:"Format",fmt_o:"Online (video call)",fmt_p:"In person",f_lang:"Language for the meeting",f_contact:"Email or phone",f_topic:"What would you like to talk about?",f_topic_ph:"Example: I'm not sure what major to pick.",f_submit:"Send request",
-mon_h:"Monthly check-in meetings",mon_p:"Every student meets with a mentor once a month. Parents are welcome to join. Add the recurring meeting to your calendar:",mon_when:"First Tuesday of every month · 4:00 PM",mon_where:"Counseling office or online link (set by your school)",mon_ics:"Add to my calendar (.ics)",
-ask_h:"Good things to bring up",ask1:"What I enjoy and what I'm good at",ask2:"Classes I should take next",ask3:"Worries about cost or about being first in my family to go",ask4:"Jobs, trades, military, or gap-year options",
-p_h:"Explore your pathways",p_p:"There is no single \"right\" path. Tap everything that sounds interesting to you.",pt_h:"The four main routes",
-r_h:"What to do each year",r_p:"Pick your grade. Check items off as you go. Your progress is saved on this device.",res_h:"Build your resume",res_p:"Colleges and employers look for what you do outside class, not only grades.",act_h:"After-school & volunteering ideas",act_link:"Find volunteer opportunities near you ↗",
-mo_h:"Paying for college, explained",mo_p:"Start with free money (grants and scholarships), then work, and only then loans. Never pay to file the FAFSA, it is free.",
-pa_h:"Parent & family corner",pa_p:"You do not need to know the college system to help. These are the words and questions that matter most.",gl_h:"Simple glossary",q_h:"Questions to ask the counselor",pa_acct:"Coming soon: family accounts, so parents can join meetings and read what was discussed.",
-d_h:"Dates to remember",d_note:"Dates change each year. Always confirm on the official website or with your counselor.",
-foot:"Parallax is a student-built prototype. Sample content only; verify details with your school counselor."},
-es:{banner_txt:"Prefer English? This site is available in English.",banner_btn:"View in English →",eb_m:"Habla con alguien",eb_p:"Encuentra tu camino",eb_r:"Año por año",eb_mo:"Sobre el dinero",eb_pa:"Para las familias",eb_d:"Marca tu calendario",skip:"Saltar al contenido",nav_mentors:"Mentores",nav_paths:"Caminos",nav_resources:"Recursos",nav_money:"Pagar la universidad",nav_parents:"Padres",
-hero_tag:"Para estudiantes y familias · Grados 9–12",hero_h:"¡Hola! Descubramos juntos qué sigue.",hero_p:"Habla con un mentor real, explora caminos hacia la universidad, el trabajo y el ejército, y recibe ayuda paso a paso para cada grado, para ti y tu familia.",
-cta1:"Reservar un mentor",cta2:"Explorar mis opciones",
-q1_h:"Quiero hablar con alguien",q1_p:"Agenda una cita con un consejero o un mentor egresado.",q2_h:"No sé qué quiero hacer",q2_p:"Elige tus intereses y mira carreras, profesiones y caminos.",q3_h:"¿Qué debo hacer este año?",q3_p:"Una lista para 9.º, 10.º, 11.º y 12.º grado.",q4_h:"¿Cómo pagamos la universidad?",q4_p:"Ayuda financiera, becas y préstamos explicados fácilmente.",
-m_h:"Mentoría y citas",m_p:"Explora tus intereses, habla de tus preocupaciones, conoce tus opciones y crea una relación con alguien que te guíe, desde temprano, no solo en el último año.",m_sample:"Se muestran mentores de ejemplo. Tu escuela agregará los perfiles reales de consejeros y egresados.",
-req_h:"Solicitar una cita",f_name:"Nombre",f_role:"Soy…",role_s:"Estudiante",role_p:"Padre / madre / tutor",f_grade:"Grado",f_mentor:"Mentor",f_date:"Fecha preferida",f_format:"Formato",fmt_o:"En línea (videollamada)",fmt_p:"En persona",f_lang:"Idioma de la reunión",f_contact:"Correo o teléfono",f_topic:"¿De qué te gustaría hablar?",f_topic_ph:"Ejemplo: No estoy seguro de qué carrera elegir.",f_submit:"Enviar solicitud",
-mon_h:"Reuniones mensuales",mon_p:"Cada estudiante se reúne con un mentor una vez al mes. Los padres pueden unirse. Agrega la reunión recurrente a tu calendario:",mon_when:"Primer martes de cada mes · 4:00 p. m.",mon_where:"Oficina de consejería o enlace en línea (lo define tu escuela)",mon_ics:"Agregar a mi calendario (.ics)",
-ask_h:"Temas para tratar",ask1:"Lo que me gusta y en lo que soy bueno",ask2:"Qué clases debo tomar después",ask3:"Preocupaciones por el costo o por ser el primero de la familia en ir",ask4:"Trabajos, oficios, ejército o un año sabático",
-p_h:"Explora tus caminos",p_p:"No existe un único camino \"correcto\". Toca todo lo que te llame la atención.",pt_h:"Los cuatro caminos principales",
-r_h:"Qué hacer cada año",r_p:"Elige tu grado. Marca cada tarea al terminarla. Tu progreso se guarda en este dispositivo.",res_h:"Crea tu currículum",res_p:"Las universidades y los empleadores valoran lo que haces fuera de clase, no solo las calificaciones.",act_h:"Actividades extracurriculares y voluntariado",act_link:"Encuentra oportunidades de voluntariado cerca de ti ↗",
-mo_h:"Cómo pagar la universidad",mo_p:"Empieza con dinero gratis (subvenciones y becas), luego trabajo, y solo al final préstamos. Nunca pagues por llenar la FAFSA: es gratis.",
-pa_h:"Rincón para padres y familias",pa_p:"No necesita conocer el sistema universitario para ayudar. Estas son las palabras y preguntas más importantes.",gl_h:"Glosario sencillo",q_h:"Preguntas para el consejero",pa_acct:"Próximamente: cuentas familiares, para que los padres puedan unirse a las reuniones y leer lo que se habló.",
-d_h:"Fechas importantes",d_note:"Las fechas cambian cada año. Confírmalas siempre en el sitio oficial o con tu consejero.",
-foot:"Parallax es un prototipo creado por estudiantes. Contenido de ejemplo; verifica los detalles con tu consejero escolar."}
-};
-
-/* ====== DATA (bilingual pairs) ====== */
-const MENTORS = [
- {av:{bg:"#dfe9fa",skin:"#e0ac85",hair:"#3b2a20",shirt:"#4f74b0",long:true},name:"Ms. Rivera",type:"counselor",role:{en:"School counselor · All pathways",es:"Consejera escolar · Todos los caminos"},langs:"EN · ES",avail:{en:"Mon & Wed afternoons",es:"Lunes y miércoles por la tarde"}},
- {av:{bg:"#ffe9b3",skin:"#c68a5b",hair:"#26354f",shirt:"#26354f"},name:"Daniel Ortiz",type:"alumni",role:{en:"Alumnus · Engineering, state university",es:"Egresado · Ingeniería, universidad estatal"},langs:"EN · ES",avail:{en:"Tue evenings (online)",es:"Martes por la noche (en línea)"}},
- {av:{bg:"#dff1e6",skin:"#b97b50",hair:"#1d1d2b",shirt:"#f2b441",long:true},name:"Priya Shah",type:"alumni",role:{en:"Alumna · Community college → Nursing",es:"Egresada · Colegio comunitario → Enfermería"},langs:"EN",avail:{en:"Thu evenings (online)",es:"Jueves por la noche (en línea)"}},
- {av:{bg:"#fde0dc",skin:"#f1c27d",hair:"#5a3a22",shirt:"#7f9bc4"},name:"Marcus Lee",type:"alumni",role:{en:"Alumnus · Skilled trades & military",es:"Egresado · Oficios y ejército"},langs:"EN",avail:{en:"Saturday mornings",es:"Sábados por la mañana"}}
-];
-const MENTOR_FILTERS = [["all",{en:"All",es:"Todos"}],["counselor",{en:"Counselors",es:"Consejeros"}],["alumni",{en:"Alumni",es:"Egresados"}]];
-
-const INTERESTS = {
- tech:{label:{en:"💻 Technology",es:"💻 Tecnología"},
-   majors:{en:"Computer Science, Information Systems, Cybersecurity",es:"Ciencias de la Computación, Sistemas de Información, Ciberseguridad"},
-   careers:{en:"Software developer, data analyst, IT specialist",es:"Desarrollador de software, analista de datos, especialista en TI"},
-   work:{en:"IT certificates (CompTIA), coding bootcamps, apprenticeships",es:"Certificados de TI (CompTIA), bootcamps de programación, aprendizajes"},
-   mil:{en:"Cyber operations, communications, IT specialist",es:"Operaciones cibernéticas, comunicaciones, especialista en TI"}},
- health:{label:{en:"🩺 Health",es:"🩺 Salud"},
-   majors:{en:"Nursing, Public Health, Biology, Kinesiology",es:"Enfermería, Salud Pública, Biología, Kinesiología"},
-   careers:{en:"Nurse, physical therapist, dental hygienist, doctor",es:"Enfermero/a, fisioterapeuta, higienista dental, médico/a"},
-   work:{en:"CNA, EMT, medical assistant, pharmacy tech programs",es:"Programas de asistente de enfermería, paramédico, asistente médico, técnico de farmacia"},
-   mil:{en:"Medic, health-care specialist",es:"Paramédico, especialista en atención médica"}},
- business:{label:{en:"📈 Business",es:"📈 Negocios"},
-   majors:{en:"Business, Accounting, Marketing, Economics, Finance",es:"Administración, Contabilidad, Mercadotecnia, Economía, Finanzas"},
-   careers:{en:"Accountant, marketer, entrepreneur, financial analyst",es:"Contador/a, mercadólogo/a, emprendedor/a, analista financiero"},
-   work:{en:"Entry-level office jobs, sales, small-business start-up",es:"Empleos de oficina, ventas, iniciar un negocio pequeño"},
-   mil:{en:"Logistics, finance, human resources",es:"Logística, finanzas, recursos humanos"}},
- arts:{label:{en:"🎨 Arts & Design",es:"🎨 Arte y Diseño"},
-   majors:{en:"Graphic Design, Film, Architecture, Music, Communications",es:"Diseño Gráfico, Cine, Arquitectura, Música, Comunicación"},
-   careers:{en:"Designer, video editor, architect, musician",es:"Diseñador/a, editor/a de video, arquitecto/a, músico/a"},
-   work:{en:"Freelance, portfolio-based jobs, design certificates",es:"Trabajo independiente, empleos con portafolio, certificados de diseño"},
-   mil:{en:"Public affairs, media, graphics",es:"Asuntos públicos, medios, gráficos"}},
- trades:{label:{en:"🔧 Building & Trades",es:"🔧 Construcción y Oficios"},
-   majors:{en:"Construction Management, Engineering Technology",es:"Gestión de Construcción, Tecnología de Ingeniería"},
-   careers:{en:"Electrician, welder, HVAC technician, mechanic",es:"Electricista, soldador, técnico de aire acondicionado, mecánico"},
-   work:{en:"Paid apprenticeships, trade school, union programs",es:"Aprendizajes pagados, escuelas técnicas, programas sindicales"},
-   mil:{en:"Engineering, mechanics, construction",es:"Ingeniería, mecánica, construcción"}},
- helping:{label:{en:"🍎 Helping & Teaching",es:"🍎 Ayudar y Enseñar"},
-   majors:{en:"Education, Social Work, Psychology",es:"Educación, Trabajo Social, Psicología"},
-   careers:{en:"Teacher, counselor, social worker, coach",es:"Maestro/a, consejero/a, trabajador/a social, entrenador/a"},
-   work:{en:"Teaching assistant, childcare, community programs",es:"Asistente de maestro, cuidado infantil, programas comunitarios"},
-   mil:{en:"Chaplain assistant, training, human services",es:"Asistente de capellán, capacitación, servicios humanos"}},
- science:{label:{en:"🔬 Science",es:"🔬 Ciencias"},
-   majors:{en:"Chemistry, Biology, Environmental Science, Physics",es:"Química, Biología, Ciencias Ambientales, Física"},
-   careers:{en:"Lab technician, researcher, environmental scientist",es:"Técnico/a de laboratorio, investigador/a, científico/a ambiental"},
-   work:{en:"Lab assistant, environmental technician certificates",es:"Asistente de laboratorio, certificados de técnico ambiental"},
-   mil:{en:"Nuclear, weather, laboratory specialist",es:"Nuclear, meteorología, especialista de laboratorio"}},
- law:{label:{en:"⚖️ Law & Public Service",es:"⚖️ Derecho y Servicio Público"},
-   majors:{en:"Political Science, Criminal Justice, Public Policy",es:"Ciencias Políticas, Justicia Penal, Políticas Públicas"},
-   careers:{en:"Lawyer, paralegal, police officer, firefighter",es:"Abogado/a, asistente legal, policía, bombero/a"},
-   work:{en:"Paralegal certificate, police/fire academy, city jobs",es:"Certificado de asistente legal, academia de policía/bomberos, empleos municipales"},
-   mil:{en:"Military police, intelligence, legal specialist",es:"Policía militar, inteligencia, especialista legal"}}
-};
-const LBL = {
-  majors:{en:"Majors to look at",es:"Carreras universitarias para explorar"},
-  careers:{en:"Careers",es:"Profesiones"},
-  work:{en:"Work & certificates",es:"Trabajo y certificados"},
-  mil:{en:"Military roles",es:"Puestos militares"},
-  none:{en:"Tap an interest above to see ideas.",es:"Toca un interés arriba para ver ideas."}
-};
-const ROUTES = [
- {b:"b1",ico:"🎓",t:{en:"College",es:"Universidad"},d:{en:"4-year university or 2-year community college. Good for careers that require a degree. Community college is a lower-cost way to start and transfer.",es:"Universidad de 4 años o colegio comunitario de 2 años. Ideal para carreras que requieren título. El colegio comunitario es una forma más económica de empezar y transferirse."},l:["https://bigfuture.collegeboard.org","BigFuture (College Board)"]},
- {b:"b2",ico:"🛠️",t:{en:"Work, trades & certificates",es:"Trabajo, oficios y certificados"},d:{en:"Go straight into a job, a paid apprenticeship, or a short training program that leads to a licensed career.",es:"Empieza directo en un empleo, un aprendizaje pagado o un programa corto que lleva a una carrera con licencia."},l:["https://www.careeronestop.org","CareerOneStop"]},
- {b:"b3",ico:"🎖️",t:{en:"Military",es:"Ejército"},d:{en:"Paid training, benefits, and money for college (GI Bill). Talk to a recruiter AND a counselor. Ask every question before deciding.",es:"Capacitación pagada, beneficios y dinero para la universidad (GI Bill). Habla con un reclutador Y con un consejero. Haz todas tus preguntas antes de decidir."},l:["https://www.todaysmilitary.com","Today's Military"]},
- {b:"b4",ico:"🌎",t:{en:"Gap year or service",es:"Año sabático o servicio"},d:{en:"A planned year of service, work, or travel before college, such as AmeriCorps. Make a plan with a mentor first.",es:"Un año planeado de servicio, trabajo o viaje antes de la universidad, como AmeriCorps. Haz un plan con un mentor primero."},l:["https://americorps.gov","AmeriCorps"]}
-];
-
-const GRADES = {
- 9:{title:{en:"9th grade: Explore & build habits",es:"9.º grado: Explorar y crear hábitos"},items:[
-  {en:"Meet your school counselor and learn your graduation requirements",es:"Conoce a tu consejero y aprende los requisitos de graduación"},
-  {en:"Try 1–2 clubs, sports, or volunteer activities",es:"Prueba 1–2 clubes, deportes o actividades de voluntariado"},
-  {en:"Keep your grades strong. Every year counts for GPA",es:"Mantén buenas calificaciones. Cada año cuenta para el promedio (GPA)"},
-  {en:"Take our interest explorer above and share results with a mentor",es:"Usa el explorador de intereses de arriba y comparte los resultados con un mentor"},
-  {en:"Start a simple record of activities, awards, and hours",es:"Empieza un registro sencillo de actividades, premios y horas"}]},
- 10:{title:{en:"10th grade: Narrow it down",es:"10.º grado: Reducir opciones"},items:[
-  {en:"Take the PSAT (practice for the SAT)",es:"Toma el PSAT (práctica para el SAT)"},
-  {en:"Start free SAT/ACT practice (Khan Academy)",es:"Empieza la práctica gratuita del SAT/ACT (Khan Academy)"},
-  {en:"Choose challenging classes (AP, dual credit) that fit your interests",es:"Elige clases desafiantes (AP, crédito dual) que se ajusten a tus intereses"},
-  {en:"Visit a college, trade school, or job site (virtual tours count)",es:"Visita una universidad, escuela técnica o lugar de trabajo (los recorridos virtuales cuentan)"},
-  {en:"Talk to an alumni mentor about their path",es:"Habla con un mentor egresado sobre su camino"},
-  {en:"Look for a summer job, program, or volunteer role",es:"Busca un empleo de verano, programa o puesto de voluntariado"}]},
- 11:{title:{en:"11th grade: Test & plan",es:"11.º grado: Exámenes y plan"},items:[
-  {en:"Take the SAT or ACT (try twice if you can)",es:"Toma el SAT o ACT (inténtalo dos veces si puedes)"},
-  {en:"Build a list of 6–8 schools or programs: reach, match, and safety",es:"Haz una lista de 6–8 escuelas o programas: ambiciosos, probables y seguros"},
-  {en:"Ask 2 teachers or mentors for recommendation letters",es:"Pide cartas de recomendación a 2 maestros o mentores"},
-  {en:"Use a net-price calculator on each school's website to estimate cost",es:"Usa la calculadora de precio neto en el sitio de cada escuela para estimar el costo"},
-  {en:"Start searching for scholarships",es:"Empieza a buscar becas"},
-  {en:"Update your resume and activity list",es:"Actualiza tu currículum y lista de actividades"}]},
- 12:{title:{en:"12th grade: Apply & decide",es:"12.º grado: Aplicar y decidir"},items:[
-  {en:"Finish applications (Common App, ApplyTexas, or school sites) before deadlines",es:"Termina las solicitudes (Common App, ApplyTexas o sitios de las escuelas) antes de las fechas límite"},
-  {en:"Write and edit your personal essay. Ask a mentor to review",es:"Escribe y revisa tu ensayo personal. Pide a un mentor que lo lea"},
-  {en:"Fill out the FAFSA (opens October 1). Parents will need tax info",es:"Llena la FAFSA (abre el 1 de octubre). Los padres necesitarán información de impuestos"},
-  {en:"Apply to at least 5 scholarships",es:"Solicita al menos 5 becas"},
-  {en:"Compare financial aid award letters side by side",es:"Compara las cartas de ayuda financiera lado a lado"},
-  {en:"Choose your school or program and submit your deposit by May 1",es:"Elige tu escuela o programa y paga el depósito antes del 1 de mayo"},
-  {en:"Say thank you to the people who helped you",es:"Agradece a las personas que te ayudaron"}]}
-};
-
-const RESUME = [
- {en:"Lead something: club officer, team captain, or start a small project",es:"Lidera algo: oficial de club, capitán de equipo o crea un proyecto pequeño"},
- {en:"Stay with fewer activities for several years rather than many for a few weeks",es:"Quédate con pocas actividades por varios años en lugar de muchas por pocas semanas"},
- {en:"Use action words and numbers: \"Organized a food drive that collected 300 items\"",es:"Usa verbos de acción y números: \"Organicé una colecta que reunió 300 artículos\""},
- {en:"Include jobs and family responsibilities. They show real skills",es:"Incluye trabajos y responsabilidades familiares. Demuestran habilidades reales"},
- {en:"Keep it to one page and ask a mentor to review it",es:"Mantenla en una página y pide a un mentor que la revise"}
-];
-const ACTS = [
- {en:"School clubs, student council, sports, band, or Enactus-style business clubs",es:"Clubes escolares, consejo estudiantil, deportes, banda o clubes de negocios"},
- {en:"Volunteer at a library, food bank, hospital, or animal shelter",es:"Voluntariado en una biblioteca, banco de alimentos, hospital o refugio de animales"},
- {en:"Tutor younger students or help classmates",es:"Dar tutoría a estudiantes más jóvenes o ayudar a compañeros"},
- {en:"Part-time job or paid internship",es:"Empleo de medio tiempo o pasantía pagada"},
- {en:"Free online courses (Khan Academy, Coursera, YouTube skills)",es:"Cursos gratuitos en línea (Khan Academy, Coursera, YouTube)"},
- {en:"Summer programs at nearby colleges. Many are free for qualifying students",es:"Programas de verano en universidades cercanas. Muchos son gratis para estudiantes que califican"}
-];
-
-const MONEY = [
- {t:{en:"Grants (free money)",es:"Subvenciones (dinero gratis)"},
-  p:[{en:"Money you do not pay back, based mostly on family income.",es:"Dinero que no se devuelve, basado principalmente en el ingreso familiar."},
-     {en:"How to get it: fill out the FAFSA (or your state's application).",es:"Cómo obtenerlo: llena la FAFSA (o la solicitud de tu estado)."},
-     {en:"Examples: Pell Grant, state grants, school grants.",es:"Ejemplos: Beca Pell, subvenciones estatales y de la escuela."}],
-  l:["https://studentaid.gov/h/apply-for-aid/fafsa","FAFSA – studentaid.gov"]},
- {t:{en:"Scholarships (free money)",es:"Becas (dinero gratis)"},
-  p:[{en:"Awards for grades, activities, background, field of study, and more.",es:"Premios por calificaciones, actividades, origen, área de estudio y más."},
-     {en:"Where to look: your counselor, the colleges you apply to, local groups, and free search sites.",es:"Dónde buscar: tu consejero, las universidades a las que aplicas, organizaciones locales y sitios gratuitos de búsqueda."},
-     {en:"Never pay a fee to apply or to \"find\" scholarships.",es:"Nunca pagues una cuota para solicitar o \"encontrar\" becas."}],
-  l:["https://bigfuture.collegeboard.org/scholarships","BigFuture Scholarship Search"]},
- {t:{en:"Work-study",es:"Trabajo-estudio"},
-  p:[{en:"A part-time campus job funded by financial aid.",es:"Un empleo de medio tiempo en el campus financiado por la ayuda financiera."},
-     {en:"You qualify by filling out the FAFSA and checking the work-study box.",es:"Calificas al llenar la FAFSA y marcar la casilla de trabajo-estudio."}],
-  l:["https://studentaid.gov/understand-aid/types/work-study","Work-study – studentaid.gov"]},
- {t:{en:"Loans (money you pay back)",es:"Préstamos (dinero que se devuelve)"},
-  p:[{en:"Federal loans usually cost less and have more protections than private loans. Take them first, and only borrow what you need.",es:"Los préstamos federales suelen costar menos y tener más protecciones que los privados. Tómalos primero y pide solo lo necesario."},
-     {en:"Ask: How much will I owe in total? What will my monthly payment be?",es:"Pregunta: ¿Cuánto deberé en total? ¿Cuál será mi pago mensual?"}],
-  l:["https://studentaid.gov/understand-aid/types/loans","Federal loans – studentaid.gov"]},
- {t:{en:"Reading an award letter",es:"Cómo leer una carta de ayuda financiera"},
-  p:[{en:"Separate free money (grants, scholarships) from money you must repay (loans) or earn (work-study).",es:"Separa el dinero gratis (subvenciones, becas) del que debes devolver (préstamos) o ganar (trabajo-estudio)."},
-     {en:"Compare the amount you still owe at each school, not the sticker price.",es:"Compara cuánto te falta pagar en cada escuela, no el precio de lista."}],
-  l:["https://studentaid.gov/understand-aid/types","Types of aid – studentaid.gov"]}
-];
-const GLOSS = [
- {w:"GPA",d:{en:"Grade Point Average: the average of a student's grades.",es:"Promedio de calificaciones de un estudiante."}},
- {w:"FAFSA",d:{en:"Free form families fill out to get federal aid for college. Free. Opens Oct 1.",es:"Formulario gratuito que las familias llenan para recibir ayuda federal. Gratis. Abre el 1 de octubre."}},
- {w:"SAT / ACT",d:{en:"Standardized tests some colleges use. Many schools have made them optional.",es:"Exámenes estandarizados que usan algunas universidades. Muchas ya los hacen opcionales."}},
- {w:"Community college",d:{en:"Two-year school that costs less. Credits can transfer to a 4-year university.",es:"Escuela de dos años que cuesta menos. Los créditos pueden transferirse a una universidad de 4 años."}},
- {w:"Major",d:{en:"The main subject a student studies in college.",es:"La materia principal que estudia un estudiante en la universidad."}},
- {w:"Net price",d:{en:"What you actually pay after grants and scholarships.",es:"Lo que realmente pagas después de subvenciones y becas."}},
- {w:"Apprenticeship",d:{en:"Paid job training where you learn a trade on the job.",es:"Capacitación pagada donde aprendes un oficio trabajando."}}
-];
-const PARENT_Q = [
- {en:"Is my child on track to graduate and to meet college requirements?",es:"¿Mi hijo/a va bien para graduarse y cumplir los requisitos universitarios?"},
- {en:"Which classes or programs fit my child's interests?",es:"¿Qué clases o programas encajan con los intereses de mi hijo/a?"},
- {en:"What should we do this year, and what are the deadlines?",es:"¿Qué debemos hacer este año y cuáles son las fechas límite?"},
- {en:"What financial help is available for our family?",es:"¿Qué ayuda financiera hay para nuestra familia?"},
- {en:"Can we have a meeting with an interpreter or in Spanish?",es:"¿Podemos tener una reunión con intérprete o en español?"}
-];
-const DATES = [
- {d:{en:"Oct 1",es:"1 de octubre"},t:{en:"FAFSA opens for seniors",es:"Abre la FAFSA para estudiantes de 12.º"}},
- {d:{en:"Nov 1 – Jan 15",es:"1 nov – 15 ene"},t:{en:"Most college application deadlines",es:"Fechas límite de la mayoría de las solicitudes"}},
- {d:{en:"Winter / Spring",es:"Invierno / Primavera"},t:{en:"SAT & ACT test dates (check College Board / ACT)",es:"Fechas del SAT y ACT (consulta College Board / ACT)"}},
- {d:{en:"May 1",es:"1 de mayo"},t:{en:"National decision day (pick your school)",es:"Día nacional de decisión (elige tu escuela)"}}
-];
-
-/* ====== STATE ====== */
-let lang = store.get("lang", (navigator.language||"en").toLowerCase().startsWith("es") ? "es" : "en");
-let grade = store.get("grade", 9);
-let mentorFilter = "all";
-let picked = store.get("interests", []);
-const L = o => o[lang];
-const $ = s => document.querySelector(s);
-
-/* ====== RENDERERS ====== */
-function applyStatic(){
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[lang][e.dataset.i18n]; if(v) e.textContent=v;});
-  document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=T[lang][e.dataset.i18nPh]);
-  document.querySelectorAll("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T[lang][e.dataset.i18nAria]));
-  document.querySelectorAll(".langsw button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
-  document.title = lang==="en" ? "Parallax – College & Career Guidance" : "Parallax – Guía universitaria y profesional";
-}
-function avatar(a){return `<svg viewBox="0 0 80 80" aria-hidden="true"><rect width="80" height="80" fill="${a.bg}"/>${a.long?`<rect x="22" y="26" width="36" height="34" rx="16" fill="${a.hair}"/>`:""}<rect x="14" y="56" width="52" height="40" rx="22" fill="${a.shirt}"/><circle cx="40" cy="36" r="16" fill="${a.skin}"/><path d="M24,34 a16,16 0 0 1 32,0 q-16,-10 -32,0z" fill="${a.hair}"/><circle cx="34" cy="38" r="2" fill="#26354f"/><circle cx="46" cy="38" r="2" fill="#26354f"/><path d="M34,44 q6,5 12,0" stroke="#26354f" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`}
-function renderMentors(){
-  $("#mentorFilter").innerHTML = MENTOR_FILTERS.map(([k,l])=>`<button type="button" class="tab" aria-pressed="${mentorFilter===k}" aria-selected="${mentorFilter===k}" data-k="${k}">${L(l)}</button>`).join("");
-  $("#mentorFilter").querySelectorAll("button").forEach(b=>b.onclick=()=>{mentorFilter=b.dataset.k;renderMentors();});
-  const list = MENTORS.filter(m=>mentorFilter==="all"||m.type===mentorFilter);
-  $("#mentorGrid").innerHTML = list.map(m=>`
-    <div class="card"><div class="mentor-top">${avatar(m.av)}<div><span class="tag">${m.type==="counselor"?(lang==="en"?"Counselor":"Consejero"):(lang==="en"?"Alumni":"Egresado")}</span>
-    <h3>${m.name}</h3></div></div><p class="muted" style="margin:0 0 6px">${L(m.role)}</p>
-    <p style="margin:0">🗓 ${L(m.avail)}<br>🗣 ${m.langs}</p>
-    <button class="btn ghost sm" style="margin-top:12px" data-pick="${m.name}">${lang==="en"?"Request this mentor":"Solicitar este mentor"}</button></div>`).join("");
-  $("#mentorGrid").querySelectorAll("[data-pick]").forEach(b=>b.onclick=()=>{$("#fMentor").value=b.dataset.pick;$("#apptForm").scrollIntoView({behavior:"smooth",block:"center"});$("#fName").focus();});
-  const sel=$("#fMentor"), cur=sel.value;
-  sel.innerHTML = MENTORS.map(m=>`<option>${m.name}</option>`).join(""); if(cur) sel.value=cur;
-}
-function renderInterests(){
-  $("#interestChips").innerHTML = Object.entries(INTERESTS).map(([k,v])=>`<button type="button" class="chip" data-k="${k}" aria-pressed="${picked.includes(k)}">${L(v.label)}</button>`).join("");
-  $("#interestChips").querySelectorAll("button").forEach(b=>b.onclick=()=>{
-    const k=b.dataset.k; picked = picked.includes(k)?picked.filter(x=>x!==k):[...picked,k]; store.set("interests",picked); renderInterests();});
-  $("#pathResults").innerHTML = picked.length ? `<div class="grid">` + picked.map(k=>{const v=INTERESTS[k];
-    return `<div class="card"><h3>${L(v.label)}</h3>
-      <p><strong>🎓 ${L(LBL.majors)}:</strong><br>${L(v.majors)}</p>
-      <p><strong>💼 ${L(LBL.careers)}:</strong><br>${L(v.careers)}</p>
-      <p><strong>🛠️ ${L(LBL.work)}:</strong><br>${L(v.work)}</p>
-      <p style="margin:0"><strong>🎖️ ${L(LBL.mil)}:</strong><br>${L(v.mil)}</p></div>`}).join("") + `</div>`
-    : `<p class="muted">${L(LBL.none)}</p>`;
-}
-function renderRoutes(){
-  $("#routes").innerHTML = ROUTES.map(r=>`<div class="card"><span class="badge ${r.b}" aria-hidden="true">${r.ico}</span><h3>${L(r.t)}</h3><p class="muted">${L(r.d)}</p><a href="${r.l[0]}" target="_blank" rel="noopener">${r.l[1]} ↗</a></div>`).join("");
-}
-function renderGrades(){
-  $("#gradeTabs").innerHTML = [9,10,11,12].map(g=>`<button role="tab" class="tab" aria-selected="${g==grade}" data-g="${g}">${lang==="en"?g+"th":g+".º"}</button>`).join("");
-  $("#gradeTabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{grade=+b.dataset.g;store.set("grade",grade);renderGrades();});
-  const g=GRADES[grade], done=store.get("done",{});
-  const total=g.items.length, n=g.items.filter((_,i)=>done[`${grade}-${i}`]).length;
-  $("#gradePanel").innerHTML = `<h3>${L(g.title)}</h3>
-    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${n}"><div style="width:${n/total*100}%"></div></div>
-    <ul class="check">${g.items.map((it,i)=>`<li><input type="checkbox" id="c${grade}-${i}" data-k="${grade}-${i}" ${done[`${grade}-${i}`]?"checked":""}><label for="c${grade}-${i}">${L(it)}</label></li>`).join("")}</ul>`;
-  $("#gradePanel").querySelectorAll("input").forEach(c=>c.onchange=()=>{const d=store.get("done",{});d[c.dataset.k]=c.checked;store.set("done",d);renderGrades();});
-}
-function renderLists(){
-  $("#resumeList").innerHTML = RESUME.map(x=>`<li>${L(x)}</li>`).join("");
-  $("#actList").innerHTML = ACTS.map(x=>`<li>${L(x)}</li>`).join("");
-  $("#moneyList").innerHTML = MONEY.map((m,i)=>`<details ${i===0?"open":""}><summary>${L(m.t)}</summary><ul>${m.p.map(x=>`<li>${L(x)}</li>`).join("")}</ul><p><a href="${m.l[0]}" target="_blank" rel="noopener">${m.l[1]} ↗</a></p></details>`).join("");
-  $("#glossary").innerHTML = GLOSS.map(g=>`<dt>${g.w}</dt><dd>${L(g.d)}</dd>`).join("");
-  $("#parentQs").innerHTML = PARENT_Q.map(x=>`<li>${L(x)}</li>`).join("");
-  $("#dateGrid").innerHTML = DATES.map(x=>`<div class="card"><span class="tag">${L(x.d)}</span><p style="margin:0">${L(x.t)}</p></div>`).join("");
-}
-function renderAll(){applyStatic();renderMentors();renderInterests();renderRoutes();renderGrades();renderLists();
-  const ok=$("#apptOk"); if(!ok.hidden){ok.textContent = lang==="en"?"✅ Request received. A counselor will contact you to confirm.":"✅ Solicitud recibida. Un consejero se comunicará contigo para confirmar.";}}
-
-/* ====== EVENTS ====== */
-function setLang(l){lang=l;store.set("lang",lang);renderAll();}
-document.querySelectorAll(".langsw button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
-$("#bannerBtn").onclick=()=>setLang(lang==="en"?"es":"en");
-
-$("#apptForm").onsubmit=async e=>{
-  e.preventDefault();
-  const data={name:$("#fName").value,role:$("#fRole").value,grade:$("#fGrade").value,mentor:$("#fMentor").value,date:$("#fDate").value,format:$("#fFormat").value,language:$("#fLang").value,contact:$("#fContact").value,topic:$("#fTopic").value};
-  if(FORM_ENDPOINT){try{await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});}catch(err){}}
-  const ok=$("#apptOk"); ok.hidden=false;
-  ok.textContent = lang==="en"?"✅ Request received. A counselor will contact you to confirm.":"✅ Solicitud recibida. Un consejero se comunicará contigo para confirmar.";
-  e.target.reset(); ok.scrollIntoView({block:"nearest"});
-};
-$("#fDate").min = new Date().toISOString().slice(0,10);
-
-$("#icsBtn").onclick=()=>{
-  const d=new Date(); d.setDate(1); d.setHours(16,0,0,0);
-  const firstTue=(y,m)=>{const x=new Date(y,m,1,16);while(x.getDay()!==2)x.setDate(x.getDate()+1);return x;};
-  let s=firstTue(d.getFullYear(),d.getMonth()); if(s<new Date()) s=firstTue(d.getFullYear(),d.getMonth()+1);
-  const f=x=>x.getFullYear()+String(x.getMonth()+1).padStart(2,"0")+String(x.getDate()).padStart(2,"0")+"T"+String(x.getHours()).padStart(2,"0")+String(x.getMinutes()).padStart(2,"0")+"00";
-  const e=new Date(s.getTime()+3600000);
-  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Parallax//EN","BEGIN:VEVENT","UID:parallax-monthly@parallax","DTSTAMP:"+f(new Date())+"Z","DTSTART:"+f(s),"DTEND:"+f(e),"RRULE:FREQ=MONTHLY;BYDAY=1TU","SUMMARY:Parallax Monthly Mentor Check-in","END:VEVENT","END:VCALENDAR"].join("\r\n");
-  const a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download="parallax-monthly-meeting.ics"; a.click();
-};
-
-renderAll();
-</script>
+<div id="site-footer"></div>
+<script src="content.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

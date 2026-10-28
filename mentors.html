@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallax</title>
+<meta name="description" content="Free mentorship, pathway exploration, and resources for students and parents, grades 9–12. English and Spanish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="mentors">
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+<section class="page-hero bg-sky"><div class="wrap ph"><div class="sec-h"><span class="eyebrow" data-i18n="eb_m"></span><h1 data-i18n="m_h"></h1><p class="lead" data-i18n="ph_m"></p></div><div class="ph-art" aria-hidden="true">🤝</div></div></section>
+<section class="bg-white"><div class="wrap prose" data-block="mentors.why"></div></section>
+<section class="bg-butter"><div class="wrap">
+  <div class="sec-h"><h2 data-i18n="meet_h"></h2></div>
+  <div class="tabs" role="group" aria-label="Mentor type" id="mentorFilter"></div>
+  <div class="grid" id="mentorGrid"></div>
+  <p class="note" data-i18n="m_sample"></p>
+</div></section>
+<section class="bg-white"><div class="wrap prose" data-block="mentors.how"></div></section>
+<section class="bg-butter"><div class="wrap two">
+  <div>
+    <h2 data-i18n="req_h"></h2>
+    <form id="apptForm">
+      <div><label for="fName" data-i18n="f_name"></label><input id="fName" required autocomplete="name"></div>
+      <div><label for="fRole" data-i18n="f_role"></label><select id="fRole"><option value="student" data-i18n="role_s"></option><option value="parent" data-i18n="role_p"></option></select></div>
+      <div><label for="fGrade" data-i18n="f_grade"></label><select id="fGrade"><option>9</option><option>10</option><option>11</option><option>12</option></select></div>
+      <div><label for="fMentor" data-i18n="f_mentor"></label><select id="fMentor"></select></div>
+      <div><label for="fDate" data-i18n="f_date"></label><input id="fDate" type="date" required></div>
+      <div><label for="fFormat" data-i18n="f_format"></label><select id="fFormat"><option value="online" data-i18n="fmt_o"></option><option value="person" data-i18n="fmt_p"></option></select></div>
+      <div><label for="fLang" data-i18n="f_lang"></label><select id="fLang"><option value="en">English</option><option value="es">Español</option></select></div>
+      <div><label for="fContact" data-i18n="f_contact"></label><input id="fContact" required></div>
+      <div class="full"><label for="fTopic" data-i18n="f_topic"></label><textarea id="fTopic" data-i18n-ph="f_topic_ph"></textarea></div>
+      <div class="full"><button class="btn" type="submit" data-i18n="f_submit"></button></div>
+    </form>
+    <div id="apptOk" class="ok" role="status" hidden></div>
+  </div>
+  <div>
+    <h2 data-i18n="mon_h"></h2>
+    <p class="muted" data-i18n="mon_p"></p>
+    <div class="card">
+      <strong data-i18n="mon_when"></strong>
+      <p class="muted" style="margin:.4rem 0 1rem" data-i18n="mon_where"></p>
+      <button class="btn ghost" id="icsBtn" data-i18n="mon_ics"></button>
+    </div>
+    <h3 style="margin-top:22px" data-i18n="ask_h"></h3>
+    <ul class="muted"><li data-i18n="ask1"></li><li data-i18n="ask2"></li><li data-i18n="ask3"></li><li data-i18n="ask4"></li></ul>
+  </div>
+</div></section>
+<section class="bg-white"><div class="wrap prose" data-block="mentors.faq"></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="content.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
